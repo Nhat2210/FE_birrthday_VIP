@@ -1,0 +1,61 @@
+@import '@styles/mixins';
+
+.login-left {
+  margin: 0 auto;
+  width: 40rem;
+
+  @include mobile {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 3.6rem;
+
+    @include mobile {
+      font-size: 2rem;
+    }
+  }
+}
+
+.login-right {
+  margin-bottom: 20px;
+  
+  h1 {
+    text-align: center; 
+    font-size: 4rem;
+    text-align: center;
+    margin: 5px 0;
+  }
+
+  p {
+    text-align: center; 
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  form {
+    width: 410px;
+    margin: 50px auto 0 auto;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  .btn-login {
+    background-color: $color-primary;
+    color: white;
+    span {
+      font-weight: bold;
+      justify-content: center;
+    }
+
+    &:hover .n-spin {
+      color: $color-primary !important;
+    }
+  }
+
+  .n-spin {
+    color: white !important;
+  }
+}

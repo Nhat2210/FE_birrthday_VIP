@@ -1,11 +1,11 @@
 <template>
   <div>
-    <Header/>
+    <!-- <Header/> -->
     <router-view v-slot="{ Component, route }">
       <transition name="slide">
         <component :is="Component" :key="route" />
       </transition>
     </router-view>
-	  <Footer/>
+	  <!-- <Footer/> -->
   </div>
 </template>

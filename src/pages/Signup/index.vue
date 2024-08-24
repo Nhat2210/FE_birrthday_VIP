@@ -16,25 +16,25 @@
       <n-grid-item >
         <div class="singup-left">
           <div class="left-body">
-            <img src="@/assets/signup/logo.png" alt="" srcset="">
+            <!-- <img src="@/assets/signup/logo.png" alt="" srcset=""> -->
             <h1>Hãy chia sẻ thông tin cá nhân để đăng ký</h1>
             <p>Chúng mình rất vui mừng khi biết bạn quan tâm đến sự kiện sinh nhật của CLB chúng mình! Hãy hoàn thành các thông tin sau để đăng ký</p>
           </div>
-          <img class="left-birthday" src="@/assets/signup/birthday.png" alt="">
-          <img class="left-cloud" src="@/assets/signup/cloud.png" alt="">
+          <!-- <img class="left-birthday" src="@/assets/signup/birthday.png" alt=""> -->
+          <!-- <img class="left-cloud" src="@/assets/signup/cloud.png" alt=""> -->
         </div>
       </n-grid-item>
       <n-grid-item >
         <div class="singup-right">
           <div class="right-title">
             <h1>Bạn ơi</h1>
-            <p>Đăng ký tham dự sinh nhật của HIT ngay thôi!</p>
+            <p>Đăng ký tham dự sinh nhật của VIP ngay thôi!</p>
           </div>
 
           <form action="#">
             <div class="form-element">
               <label for="">Họ và tên</label> <br>
-              <n-input type="text" size="large" placeholder="Bùi Việt Hoàng" />
+              <n-input type="text" size="large" placeholder="Cao Đình Nhật" />
             </div>
 
             <div class="form-element">
@@ -49,7 +49,7 @@
 
             <div class="form-element">
               <label for="">Link facebook</label> <br>
-              <n-input type="text" size="large" placeholder="https://www.facebook.com/MyNameBVH/" />
+              <n-input type="text" size="large" placeholder="https://www.facebook.com/Nhatbeocute1234/" />
             </div>
 
             <div class="form-element">
@@ -82,8 +82,8 @@
   .signup {
     .singup-left {
       position: relative;
-      background: rgb(253,200,48);
-      background: linear-gradient(90deg, rgba(253,200,48,1) 0%, rgba(243,115,53,1) 100%);
+      background: rgb(48, 161, 253);
+      background:  rgb(48, 161, 253);
       opacity: 0.8;
       color: white;
 
@@ -218,13 +218,13 @@
 
           font-weight: bold;
           border-radius: 32px;
-          background-color: #F47B2A;
+          background-color: rgb(48, 161, 253);
           color: white;
           cursor: pointer;
           font-size: 1.8rem;
 
           &:hover {
-            background-color: #eb640b;
+            background-color: rgb(48, 161, 253);
           }
         }
       }

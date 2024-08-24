@@ -6,8 +6,8 @@
 
 <script setup lang="ts">
 import type { GlobalThemeOverrides } from 'naive-ui';
-import { darkTheme, lightTheme } from 'naive-ui'
-import { useSettingStore } from '@/stores/setting'
+import { darkTheme, lightTheme } from 'naive-ui';
+import { useSettingStore } from '@/stores/setting';
 const themeOverrides: GlobalThemeOverrides = {
   common: { 
     primaryColor: "#EF7C45FF",
