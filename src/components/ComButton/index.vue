@@ -13,5 +13,10 @@
         border: none;
         cursor: pointer;
         padding: 10px 10px;
+        background: #6ea3f2;
+        color: #fff;
+    }
+    button:hover{
+
     }
 </style>

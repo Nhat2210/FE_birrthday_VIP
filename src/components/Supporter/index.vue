@@ -122,16 +122,18 @@ const toggleSupportDrawer = () => {
 .qr-bank{
     object-fit: cover;
     &img{
-        width: 50%;
+        width: 10%;
     }
 }
 .qr-bank-modal {
-  background: white;
-  padding: 4rem;
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    width: 500px;
+    height: 400px;
+    background: white;
+    padding: 4rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   .border-gradient {
     display: inline-block;
     width: 230px;
@@ -144,7 +146,7 @@ const toggleSupportDrawer = () => {
     background-image: linear-gradient(white, white),
       linear-gradient(90deg, rgba(253, 200, 48, 1) 0%, rgba(243, 115, 53, 1) 100%);
 
-    & > img {
+    &  img {
       width: 230px;
       height: 230px;
       object-fit: cover;

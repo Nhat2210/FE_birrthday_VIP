@@ -55,27 +55,19 @@
         </div>
         <!-- end maintitle  -->
 
-        <!--start countdown-->
-        <div class="countdown">
-            <div class="countdown_image">
-                <img src="../assets/img/Countdown.jpg" alt="">
-            </div>
-            <div class="countdown_number">
+        <Countdown/>
 
-            </div>
-        </div>
-        <!--end countdown-->
-
-        <AdminCongrats/>
+        <!-- <AdminCongrats/> -->
+        <Supporter/>
+        <Seeback/>
+        <Footer/>
     </div>
 
 </template>
 <style scoped lang="scss">
-    .container_menu{
-        position: fixed;
-        width: 100%;
-    }
+
     .scroll{
+        z-index: 999;
         position: fixed;
         margin-top: 60px;
         width: 100%;
@@ -83,7 +75,7 @@
         background: #f6f6f6;
         &_bar{
             height: 4px;
-            background: #faaca8;
+            background: linear-gradient(to right,  #6ea3f1,#c7e1ff);
             width: 0%;
         }
     }
@@ -102,7 +94,7 @@
         padding: 50px 0;
         &_title{
             text-transform: uppercase;
-            font-size: 38px;
+            font-size: 40px;
             background: linear-gradient(to right, #bfddff, #ddd6f3);
             -webkit-background-clip: text; 
             color: transparent; 
@@ -129,21 +121,6 @@
             display: block;
             margin: 0 auto;
             padding: 20px 0;
-        }
-    }
-    .countdown{
-
-        padding: 30px 0; 
-        width: 100%;
-        &_image{
-            img{
-                display: block;
-                margin: 0 auto;
-                width: 70%;
-                object-fit: cover;
-                object-position: 100% 0;
-                height: 550px;
-            }   
         }
     }
 </style>
