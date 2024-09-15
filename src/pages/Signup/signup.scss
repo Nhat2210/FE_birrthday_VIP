@@ -1,0 +1,78 @@
+.signup{
+    display: flex;   
+    box-sizing: border-box; 
+    position: relative;
+}
+.left-body{
+    color: #fff;
+    background: linear-gradient(to right,  #6ea3f1,#4c85db);
+    width: calc(50% - 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 50px;
+    .logo{
+        display: flex;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        background: #fff;
+        border: 3px solid #0077fe;
+    }
+    img{
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        border-radius: 50%;
+    }
+    h1{
+        font-size: 36px;
+        width: 70%;
+        line-height: 1.2;
+    }
+    p{
+        width: 70%;
+        font-size: 18px;
+    }
+}
+
+.right{
+    width: calc(50% - 40px);
+    margin: 20px;
+    flex-grow: 1;
+    h1{
+        font-size: 40px;
+        width: 80%;
+        margin-left: 20px;
+        text-align: center;
+        line-height: 1.2;
+    }
+    p{
+        font-size: 18px;
+        text-align: center;
+        line-height: 1.4;
+    }
+}
+.btn{
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    padding: 15px 20px;
+    border-radius: 999px;
+    border: none;
+    background: #398ae7;
+    color: #fff;
+    font-size: 18px;
+}
+.cloud{
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    right: 49%;
+}
+.birthday{
+    width: 30%;
+    bottom: 0;
+    right: 50%;
+    position: absolute;
+}

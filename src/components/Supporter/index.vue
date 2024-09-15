@@ -17,7 +17,7 @@ const toggleSupportDrawer = () => {
 <template>
     <button @click="toggleSupportDrawer" :class="{ active: showSupportDrawer}" id="supporter">Cấp lại QR</button>     
     
-    <n-drawer v-model:show="showSupportDrawer" :width="300" placement="right" :z-index="90" resizable>
+    <n-drawer v-model:show="showSupportDrawer" :width="300" placement="right" :z-index="9999" resizable>
         <n-drawer-content>
             <n-space :wrap="false" align="center">
                 <n-avatar round :size="50" :src="logo">
@@ -91,6 +91,7 @@ const toggleSupportDrawer = () => {
 @import '@styles/mixins';
 
 #supporter {
+  z-index: 9999;
   position: fixed;
   right: 0;
   top: 50%;

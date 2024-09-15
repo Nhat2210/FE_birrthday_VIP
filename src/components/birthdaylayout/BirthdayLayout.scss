@@ -1,0 +1,89 @@
+@import '@styles/mixins';
+
+.birthday-layout {
+  .layout-left {
+    height: 100%;
+    // min-height: 410px;
+    position: relative;
+    background: rgb(253, 200, 48);
+    background: linear-gradient(90deg, rgba(253, 200, 48, 1) 0%, rgba(243, 115, 53, 1) 100%);
+    opacity: 0.8;
+    color: white;
+
+    padding-top: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+
+    @include mobile {
+      height: 500px;
+    };
+
+    @include tablet {
+      height: 800px;
+    };
+
+    .left-body {
+      margin: 0 auto;
+      width: 40rem;
+
+      @include mobile {
+        width: 100%;
+      }
+    }
+  }
+
+  .left-birthday {
+    position: absolute;
+    bottom: 0;
+    right: -96px;
+    z-index: 10;
+    width: auto;
+    height: 40vh;
+
+    @include tablet {
+      height: auto;
+      width: 300px;
+      right: 0;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .left-cloud {
+    position: absolute;
+    height: 100%;
+    width: 20rem;
+    top: 0;
+    right: -60px;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .layout-right {
+    box-sizing: border-box;
+    padding: 40px 10px 40px 10px;
+    z-index: 20;
+    min-height: 100vh;
+
+    max-width: 460px;
+    margin: 0 auto;
+
+    @include tablet {
+      min-height: 500px;
+      padding-bottom: 30px;
+    }
+
+    @include mobile {
+      padding-bottom: 30px;
+    }
+  }
+}

@@ -1,34 +1,99 @@
 <script lang="ts" setup>
-    // execute scroll indicator
-    window.onscroll = function() {
-    myFunction();
-    };
+import confetti from 'canvas-confetti';
 
-    function myFunction() {
-    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
 
-    const myBar = document.getElementById("mybar");
-    if (myBar) {
-        myBar.style.width = scrolled + "%";
-    }
-    }
+const count: number = 500;
+const defaults: { origin: { y: number } } = {
+  origin: { y: 0.9 },
+};
 
+function fire(particleRatio: number, opts: object): void {
+  confetti({
+    ...defaults,
+    ...opts,
+    particleCount: Math.floor(count * particleRatio),
+  });
+}
+
+fire(0.25, {
+  spread: 26,
+  startVelocity: 55,
+});
+fire(0.2, {
+  spread: 60,
+});
+fire(0.35, {
+  spread: 100,
+  decay: 0.91,
+  scalar: 0.8,
+});
+fire(0.1, {
+  spread: 120,
+  startVelocity: 25,
+  decay: 0.92,
+  scalar: 1.2,
+});
+fire(0.1, {
+  spread: 120,
+  startVelocity: 45,
+});
+// window.onscroll = function() {
+//     myFunction();
+// };
+
+// function myFunction() {
+//     const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+//     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+//     const scrolled = (winScroll / height) * 100;
+
+//     const myBar = document.getElementById("mybar");
+//     if (myBar) {
+//         myBar.style.width = scrolled + "%";
+//     }
+
+//     if (myBar) {
+//         myBar.style.width = scrolled + "%";
+
+//         triggerConfetti(myBar);
+//     }
+// }
+// function triggerConfetti(element: HTMLElement) {
+//     const rect = element.getBoundingClientRect();
+//     console.log("Triggering confetti at", rect);
+
+//     confetti({
+//         particleCount: 20,
+//         startVelocity: 50,
+//         angle: 0,
+//         zIndex: 99999,
+//         spread: 20,
+//         scalar: 0.8,
+
+//         gravity: 0,
+//         ticks: 30,
+//         origin: {
+//             x: (rect.left + rect.width - 20) / window.innerWidth,
+//             y: (rect.top + rect.height / 20) / window.innerHeight
+//         }
+//     });
+// }
 </script>
 
-<template>
 
-    <div class="wrapper">
-        <!-- start header  -->
+<template>
+    <!-- start header  -->
+    <div class="main_header">
         <Header />
-        <!-- end header  -->
+    </div>
+    <!-- end header  -->
+    <div class="wrapper">
+
 
 
         <!-- start scroll indicator-->
-         <div class="scroll">
+         <!-- <div class="scroll">
             <div class="scroll_bar" id="mybar"></div>
-         </div>
+         </div> -->
         <!--end scroll indicator-->
 
 
@@ -37,90 +102,64 @@
             <img class="mainbackground_img" src="../assets/img/mainbackground.jpg" alt="">
         </div>
         <!-- end mainbg  -->
-
-        <!-- start maintitle  -->
-        <div class="wrapper">
-            <div class="maintitle">
-                <h2 class="maintitle_title">
-                    CHÀO MỪNG SINH NHẬT LẦN <span class="maintitle_title_text">THỨ 13</span> <br> CÂU LẠC BỘ TIẾNG ANH VIP
-                </h2>
-                <p class="maintitle_content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo magni, facilis sapiente, veniam accusamus, quam molestias facere saepe eligendi fugit error. Cum officiis repellendus ad sunt iure laboriosam reprehenderit aperiam.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore repellendus iure, repudiandae et modi est deserunt nisi enim aspernatur soluta quas minima voluptas quis vero ullam fugit! Magni, corporis debitis.
-                </p>
-                <div class="maintitle_button">
-                    <ComButton/>
-                </div>
-            </div>
-        </div>
-        <!-- end maintitle  -->
-
+        <Maintitle/>
         <Countdown/>
-
-        <!-- <AdminCongrats/> -->
-        <Supporter/>
         <Seeback/>
+        <AdminCongrats1/>
+        <!-- <AdminCongrats2/> -->
+        <!-- <Supporter/> -->
+        <Activities/>
+        <Timeline/>
+        <!-- <Footer/> -->
+         
+        <!--start backtop -->
+        <n-back-top 
+        :right="40"
+        :builtin-theme-overrides="{
+                    iconColor:'#D1E9F6',
+                    iconColorHover: '#6ea3f2',
+                    textColorHover: '#5B99C2',
+        }"
+        />
+        <!-- end backtop -->
+
+        <!-- start side button -->
+        <showQRbank/>
+        <renewQRmodal/>
+        <frameAvatar/>
+        <!-- end side button -->
+
+        <!-- Start frame image  -->
+        <!-- end frame image  -->
         <Footer/>
     </div>
 
 </template>
 <style scoped lang="scss">
-
+    :deep(.n-back-top)  {
+        --n-icon-color: white; 
+    }
     .scroll{
         z-index: 999;
-        position: fixed;
-        margin-top: 60px;
+        // position: fixed;
+        // margin-top: 60px;
         width: 100%;
         height: 4px;
         background: #f6f6f6;
         &_bar{
             height: 4px;
-            background: linear-gradient(to right,  #6ea3f1,#c7e1ff);
+            background: linear-gradient(to right,  #6ea3f1,#6ea3f1);
             width: 0%;
         }
     }
     .mainbackground{
-        padding-top: 60px;
+        // padding-top: 60px;
         object-fit: cover;
+        height: calc(100vh - 60px);
         &_img{
+            height: calc(100vh - 60px);
             width: 100%;
         }
     }
-    .wrapper
-    {
-        background-color: #f3f3f3;
-    }
-    .maintitle{
-        padding: 50px 0;
-        &_title{
-            text-transform: uppercase;
-            font-size: 40px;
-            background: linear-gradient(to right, #bfddff, #ddd6f3);
-            -webkit-background-clip: text; 
-            color: transparent; 
-            margin: 0;
-            line-height: 1.2;
-            text-align: center;
-            &_text{
-                color: #faaca8;
-            }
-        }
-        &_button{
-            display: flex;
-            justify-content: center;
-            font-size: 15px;
-            button{
-                background-color: #ddd6f3;
-                border: 1px solid black;
-            }
-        }
-        &_content{
-            font-size: 18px;
-            max-width: 700px;
-            text-align: center;
-            display: block;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
-    }
+
 </style>

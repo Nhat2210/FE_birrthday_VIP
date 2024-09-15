@@ -11,6 +11,12 @@ const axiosIns = axios.create({
     "Content-Type": "application/json",
   },
 })
+const axiosInsNoInterceptors = axios.create({
+  baseURL: `${import.meta.env.VITE_API_URL}/api`,
+  headers: {
+    'Content-Type': 'application/json'
+  }
+});
 
 axiosIns.interceptors.request.use(function (config: InternalAxiosRequestConfig) {
   const token = `Bearer ${localStorage.getItem("accessToken")}`
@@ -30,4 +36,6 @@ axiosIns.interceptors.response.use(function (response: AxiosResponse<any>) {
   return Promise.reject(error);
 });
 
-export default axiosIns
+// export default axiosIns
+export const api = axiosIns;
+export const apiDefault = axiosInsNoInterceptors;

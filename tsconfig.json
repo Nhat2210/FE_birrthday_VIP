@@ -2,6 +2,8 @@
   "extends": "@vue/tsconfig/tsconfig.web.json",
   "include": ["*.d.ts", "src/**/*", "src/**/*.vue"],
   "compilerOptions": {
+    "target": "ES2018",
+    "lib": ["es2018", "dom"], 
     "baseUrl": ".",
     "types": ["vite-plugin-vue-layouts/client"],
     "paths": {

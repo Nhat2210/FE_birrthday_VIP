@@ -40,28 +40,28 @@ const refactorNumber = (number: number): string | number => (number < 10 ? `0${n
                     <span class="number">
                         {{ refactorNumber(day) }}
                     </span>
-                    <span class="label">day</span>
+                    <span class="label">days</span>
                 </div>
                 :
                 <div class="countdown_number_hour group">
                     <span class="number">
                         {{ refactorNumber(hour) }}
                     </span>
-                    <span class="label">hour</span>
+                    <span class="label">hours</span>
                 </div>
                 :
                 <div class="countdown_number_minute group">
                     <span class="number">
                         {{ refactorNumber(minutes) }}
                     </span>
-                    <span class="label">minute</span>
+                    <span class="label">minutes</span>
                 </div>
                 :
                 <div class="countdown_number_second group">
                     <span class="number">
                         {{ refactorNumber(second) }}
                     </span>
-                    <span class="label">second</span>
+                    <span class="label">seconds</span>
                 </div>
             </div>
         </div>
@@ -71,7 +71,6 @@ const refactorNumber = (number: number): string | number => (number < 10 ? `0${n
 <style lang="scss" scoped>
     .countdown{
     position: relative;
-    padding: 30px 0; 
     width: 100%;
     &_image{
         position: relative;
@@ -87,26 +86,30 @@ const refactorNumber = (number: number): string | number => (number < 10 ? `0${n
         }   
     }
     &_number{
-        src:url(@/assets/fonts/RayleighglamourRegular-51YJz.otf);
         position: absolute;
         color: white;
-        font-size: 70px;
+        font-size: 100px;
         font-weight: 800;
         text-align: center;
         top: 50%;
-        font-family: "RayleightGlamourRegular-51YJz";
+        
+        font-family: 'VintageGlamour';
+        src: url('@/assets/fonts/VintageGlamourRegular-ALX27.ttf') format('truetype');
+         font-weight: normal;
+        font-style: normal;
+
         left:50%;
-        transform: translate(-50%, 10%);
+        transform: translate(-50%, -10%);
         z-index: 10;
         display: flex;
-        gap: 15px;
+        gap: 10px;
         .group{
             display: flex;
             flex-direction: column;
-            justify-content: center;
         }
         .label{
-            font-size: 24px;
+            font-size: 40px;
+            font-family: "Lora", serif;
         }
     }
     }
