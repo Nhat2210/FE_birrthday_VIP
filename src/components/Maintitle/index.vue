@@ -1,5 +1,8 @@
 <script setup lang="ts">
-
+const { push } = useRouter();
+const handleRouter = () => {
+    push('/signup')
+}
 </script>
 <template>
     <div class="wrapper">
@@ -24,7 +27,7 @@
             </p>
             <div class="maintitle_button"
             >
-                <AnimateButton/>
+                <AnimateButton @click="handleRouter()"/>
             </div>
         </div>
     </div>       

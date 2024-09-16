@@ -10,7 +10,7 @@ import { copy } from 'v-copy'
 <div class="signup">
   <div class="left-body">
     <div class="logo">
-      <a href="" @click="push('./')"><img src="@/assets/signup/logo.png" alt=""></a>
+      <a href="" @click="push('/')"><img src="@/assets/signup/logo.png" alt=""></a>
     </div>
     <h1>Phương thức chuyển khoản</h1>
     <p>

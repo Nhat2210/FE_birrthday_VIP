@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
 const { push } = useRouter();
+const handleRouter = () => {
+    push('/signup')
+}
 </script>
 <template>
     <div class="container_menu">
@@ -10,7 +13,7 @@ const { push } = useRouter();
                     <img src="@/assets/img/logotransferbg.png" alt="">
                 </a>
             </li>
-            <li class="list_item"><AnimateButton/></li>
+            <li class="list_item"><AnimateButton @click="handleRouter()"/></li>
         </ul>
     </div>
 </template>

@@ -1,4 +1,8 @@
 <script setup lang="ts">
+const { push } = useRouter();
+const handleRouter = () => {
+    push('/signup')
+}
 </script>
 <template>
     <div class="container_timeline">
@@ -8,7 +12,7 @@
         data-aos-easing="ease-in-out"
         >
             <h2 class="introduce_title">Hướng dẫn</h2>
-            <AnimateButton/>
+            <AnimateButton @click="handleRouter()"/>
         </div>
         <div class="timeline">
             <n-timeline size="large">

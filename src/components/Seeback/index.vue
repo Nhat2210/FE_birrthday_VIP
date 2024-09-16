@@ -22,7 +22,6 @@
         </div>
 
         <n-tabs type="segment" 
-        class="test"
         animated 
         :style="{
         '--n-tab-text-color': '#fff',
@@ -32,7 +31,8 @@
         '--n-color-segment': '#ddd',
         '--n-tab-color-segment': '#9bbff5',
         '--n-tab-text-color-active': '#fff',
-        '--n-tab-text-color-hover': '#fff'
+        '--n-tab-text-color-hover': '#fff',
+        '--n-font-weight-strong': '600'
         }" >
             <n-tab-pane name="oasis" tab="V.I.P 11">
                 <div class="card">
@@ -197,9 +197,10 @@
                 color: transparent; 
             }
             &_button{
-                background: #fff;
+                background: #9bbff5;
+                color:#fff;
                 border: none;
-                padding: 10px 0px;
+                padding: 13px 0px;
                 border-radius: 15px;
                 font-size: 18px;
                 width: 220px;

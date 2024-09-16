@@ -17,7 +17,7 @@ const handleDownloadQR = () => {
 <div class="signup">
   <div class="left-body">
     <div class="logo">
-      <img src="@/assets/signup/logo.png" alt="">
+      <a href="/"><img src="@/assets/signup/logo.png" alt=""></a>
     </div>
     <h1>Xác nhận thông tin cá nhân để  đăng ký</h1>
     <p>

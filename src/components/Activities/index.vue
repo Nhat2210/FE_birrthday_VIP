@@ -18,12 +18,19 @@
       data-aos-easing="ease-in-out"
       data-aos-offset="100"  
 
-        effect="custom"
-        :transition-props="{ name: 'creative' }"
-        show-arrow="true"
-        autoplay="true"
-        style="width: 45%; height: 350px"
-        class="custom_arrow"
+      effect="custom"
+      :transition-props="{ name: 'creative' }"
+      show-arrow="true"
+      autoplay="true"
+      style="
+      width: 45%;
+      height: 350px;"
+      class="custom_arrow"
+      :style="{
+        '--n-arrow-color': '#6ea3f1',
+        '--n-dot-color-focus': '#6ea3f1',
+        '--n-dot-color-active': '#6ea3f1',
+      }"
       >
         <n-carousel-item>
           <div class="carousel-item-content">
@@ -71,17 +78,26 @@
           </div>
         </n-carousel-item>
       </n-carousel>
-      <p class="text"
-      data-aos="fade-left"
-      data-aos-duration="300"
-      data-aos-delay="200"
-      data-aos-easing="ease-in-out"
-      data-aos-offset="100"  
-      
-      >
-        Lorem ipsum dolor sit amet consectetur,<br>
-        adipisicing elit. Aspernatur, placeat assumenda. 
-      </p>
+      <div class="content">
+        <p class="text"
+        data-aos="fade-left"
+        data-aos-duration="300"
+        data-aos-delay="200"
+        data-aos-easing="ease-in-out"
+        data-aos-offset="100"  
+        
+        >
+          Lorem ipsum dolor sit amet consectetur,<br>
+          adipisicing elit. Aspernatur, placeat assumenda. 
+        </p>
+        <AnimateButton
+        data-aos="fade-left"
+        data-aos-duration="300"
+        data-aos-delay="200"
+        data-aos-easing="ease-in-out"
+        data-aos-offset="100"  
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -102,7 +118,7 @@
   position: relative;
 }
 
-.text {
+.content {
   position: absolute;
   top: 100px;
   right: 100px;

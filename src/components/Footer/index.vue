@@ -1,9 +1,8 @@
 <template>
     <footer class="footer">
-        <div class="straightline">
-        </div>
+        <div class="straightline"></div>
         <div class="logo">
-            <img src="" alt="">
+            <img src="@/assets/img/favicon.jpg" alt="">
         </div>
         <div class="link">
             <p class="infor">Thông tin liên hệ chúng mình</p>
@@ -14,53 +13,82 @@
             </ul>
         </div>
         <div class="copyright">
-            Copyright © 2024 VIP DEV
+            Copyright © 2024 V.I.P Team of Developers
         </div>
     </footer>
-    
 </template>
-<style scoped>
-    .copyright{
-        text-align: center;
-        font-size: 18px;
-    }
-    .infor{
-        font-weight: 500;
-        text-align: end;
-        margin-right: 100px;
-        font-size: 16px;
-        line-height: 0.5;
-    }
-    .footer{
-        width: 100%;
-        font-weight: 600;
-    }
-    .straightline{
-        width: 100%;
-        height: 0.1px;
-        /* background: linear-gradient( to right, #d5e2f6 ,#6ea3f1 );; */
-        background: #000000;
-    }
-    .fa-tiktok{
-        color: black
-    }
-    .fa-facebook{
-        color:blue;
-    }
-    .fa-youtube{
-        color: red;
-    }
-    .social li{
-        list-style-type: none;
-        font-size: 16px;
-        line-height: 0.5;
-        padding: 5px 10px;
-        cursor: pointer;
-    }
-    .social{
-        display: flex;
-        justify-content: flex-end;
-        margin-right: 100px;
 
+<style lang="scss" scoped>
+    .footer {
+        width: 100%;
+        position: relative;
+        font-weight: 600;
+
+        .straightline {
+            width: 100%;
+            height: 0.1px;
+            background: #8271bb;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 120px;
+            border-radius: 50%;
+
+            img {
+                width: 8%;
+                border-radius: 50%;
+                border: 5px solid #f6f6f6;
+                transition: box-shadow 0.3s ease;
+
+                &:hover {
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                }
+            }
+        }
+
+        .link {
+            .infor {
+                font-weight: 500;
+                text-align: end;
+                margin-right: 100px;
+                font-size: 16px;
+                line-height: 0.5;
+                margin-top: 30px;
+            }
+
+            .social {
+                display: flex;
+                justify-content: flex-end;
+                margin-right: 100px;
+
+                li {
+                    list-style-type: none;
+                    font-size: 16px;
+                    line-height: 0.5;
+                    padding: 5px 10px;
+                    cursor: pointer;
+
+                    .fa-tiktok {
+                        color: black;
+                    }
+
+                    .fa-facebook {
+                        color: blue;
+                    }
+
+                    .fa-youtube {
+                        color: red;
+                    }
+                }
+            }
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
     }
 </style>

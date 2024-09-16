@@ -14,7 +14,7 @@ const picture = "https://api.viphaui.com/" + userData.image;
 <div class="signup">
   <div class="left-body">
     <div class="logo">
-      <a href="" @click="push('./')"><img src="@/assets/signup/logo.png" alt=""></a>
+      <a href="" @click="push('/')"><img src="@/assets/signup/logo.png" alt=""></a>
     </div>
     <h1>Xác nhận thông tin cá nhân để  đăng ký</h1>
     <p>

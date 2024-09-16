@@ -1,7 +1,7 @@
 
 .signup {
     display: flex;
-    height: 120vh;
+    height: 110vh;
     box-sizing: border-box;
     position: relative;
 }
@@ -27,8 +27,8 @@
     }
     
     img {
-        width: 120px;
-        height: 120px;
+        width: 117px;
+        height: 117px;
         object-fit: contain;
         border-radius: 50%;
     }
@@ -94,6 +94,9 @@
     .btn-download{
         background: #6ea3f1;
         color: #fff;
+    }
+    .btn-download:hover{
+        background: #5596f8;
     }
     i{
         margin-right: 10px;
