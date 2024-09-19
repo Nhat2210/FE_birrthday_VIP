@@ -19,6 +19,7 @@
     "canvas-confetti": "^1.9.3",
     "cropperjs": "^1.6.2",
     "gsap": "^3.12.5",
+    "html-to-image": "^1.11.11",
     "pinia": "^2.2.2",
     "qrcode-vue3": "^1.6.8",
     "v-copy": "^0.1.0",

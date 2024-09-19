@@ -7,6 +7,7 @@ interface UserState {
   phoneNumber: string;
   facebook: string;
   image: string;
+  id: string; 
 }
 
 export const useUserStore = defineStore('userStore', {
@@ -16,16 +17,12 @@ export const useUserStore = defineStore('userStore', {
     generation: '',
     phoneNumber: '',
     facebook: '',
-    image: ''
+    image: '',
+    id: ''
   }),
   actions: {
     setUser(user: UserState) {
-      this.fullName = user.fullName;
-      this.email = user.email;
-      this.generation = user.generation;
-      this.phoneNumber = user.phoneNumber;
-      this.facebook = user.facebook;
-      this.image = user.image;
+      Object.assign(this, user);  
     },
     clearUser() {
       this.$reset();

@@ -178,16 +178,16 @@ const handleSignup = async () => {
   try {
     const { data } = await signup(formValue);
     
-    console.log(data)
     const userSignupRes = data.data
     useStore.setUser({
+      id: userSignupRes.id + '',
       fullName: userSignupRes.fullName,
       email: userSignupRes.email,
-      generation: userSignupRes.generation,
+      generation: userSignupRes.generation, 
       phoneNumber: userSignupRes.phoneNumber,
       facebook: userSignupRes.facebook,
       image: userSignupRes.image,
-         }
+    }
     )
     push('/signup/confirm');
   } catch (err: any) {

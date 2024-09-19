@@ -3,6 +3,9 @@ import { useRouter } from 'vue-router';
 import QRCodeVue3 from 'qrcode-vue3';
 const { push } = useRouter();
 const message = useMessage();
+import { useUserStore } from '@/stores/user';
+const useStore = useUserStore();
+const userData = useStore.$state;
 import { copy } from 'v-copy'
 </script>
 
@@ -41,7 +44,7 @@ import { copy } from 'v-copy'
         </div>
         <p style="width: 70%;">Với kinh phí đóng về CLB là 300.000đ mỗi người hãy quét mã QR sau với nội dung nội dung:</p>
         <div class="p_copy">
-            <p> - Knull - Dong tien sinh nhat</p>
+            <p> - {{ userData.fullName || 'Ho va ten' }} - Dong tien sinh nhat</p>
             <span>
                     <n-button
                         strong

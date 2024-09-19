@@ -113,8 +113,8 @@ fire(0.1, {
         <!-- <Footer/> -->
          
         <!--start backtop -->
-        <!-- <BackTop/> -->
-        <n-back-top :right="100" />
+        <BackTop/>
+        <n-back-top :top="100" :left="100" />
         <!-- end backtop -->
 
         <!-- start side button -->
