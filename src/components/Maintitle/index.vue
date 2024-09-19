@@ -33,32 +33,42 @@ const handleRouter = () => {
     </div>       
 </template>
 <style scoped lang="scss">
+@import '@styles/_mixins.scss';
 .wrapper
     {
         background-color: #f6f6f6;
         height: 100vh;
+        @include mobile{
+            height: 100%;
+        }
     }
     .maintitle{
         padding: 100px 0;
         position: relative;
+        @include mobile{
+            padding: 50px 10px;
+        }
         &_title{
             text-transform: uppercase;
             font-size: 44px;
             margin: 0;
-            z-index: 10;
             line-height: 1.2;
             text-align: center;
-
-
-            &_title::after{
-            content: '';
-            position: absolute;
-            left: 24%;
-            top: 32%;
-            width: 52%;
-            height: 15px;
-            background: linear-gradient(to bottom, #398ae7, #ffffff);
-            z-index:1;
+            // &_title::after{
+            // content: '';
+            // position: absolute;
+            // left: 24%;
+            // top: 32%;
+            // width: 52%;
+            // height: 15px;
+            // background: linear-gradient(to bottom, #398ae7, #ffffff);
+            // z-index:1;
+            // }
+            @include mobile{
+                text-transform: uppercase;
+                font-size: 22px;
+                margin: 0;
+                text-align: center;
             }
             &_text{
                 background: linear-gradient(to right, #398ae7, #8271bb);
@@ -77,11 +87,17 @@ const handleRouter = () => {
         }
         &_content{
             font-size: 18px;
-            max-width: 800px;
+            max-width: 750px;
             text-align: center;
             display: block;
             margin: 0 auto;
             padding: 20px 0;
+            margin-bottom: 30px;
+            @include mobile{
+                font-size: 13px;
+                width: 90%;
+                margin-bottom: 0;
+            }
         }
     }
 </style>

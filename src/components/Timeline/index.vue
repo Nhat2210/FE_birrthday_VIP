@@ -84,23 +84,37 @@ const handleRouter = () => {
     </div>
 </template>
 <style lang="scss" scoped>
-    :deep(.n-item-timeline-content_title){
-        font-size: 40px !important;
-    }
+@import '@styles/_mixins.scss';
+
     .container_timeline{
         background: #fff;
         padding: 100px 0;
         display: flex;
         justify-content: space-around;
         gap: 200px;
+        @include mobile{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding: 50px 0;
+        }
+    }
+    .timeline{
+        @include mobile{
+            padding: 0 50px;
+        }
     }
     .introduce{
+
         align-self: center;
         &_title{
             font-size: 30px;
             margin: 0;
             font-weight: 600;
             letter-spacing: 0.3px;
+            @include mobile{
+                font-size: 22px;
+            }
         }
         button{
             display: inline-block;
@@ -109,6 +123,10 @@ const handleRouter = () => {
             justify-content: center;
             align-items: center;
             padding: 15px 35px;
+            @include mobile{
+                padding: 1em 1.2em;
+                font-size: 8px;
+            }
         }
     }
 </style>

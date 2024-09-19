@@ -2,6 +2,10 @@
     display: flex;   
     box-sizing: border-box; 
     position: relative;
+    @include mobile{
+        display: flex;
+        flex-direction: column;
+    }
 }
 .left-body{
     color: #fff;

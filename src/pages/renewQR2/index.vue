@@ -25,6 +25,7 @@ const rules = {
     trigger: ['input', 'blur']
   }
 };
+
 const recaptchaVerified = (response: string) => {
   formQR.recaptcha = response;
 };
@@ -49,27 +50,31 @@ const imageUrl = ref(route.query.imageUrl as string || '@/assets/img/cat.png');
 const user = ref<{ id: string; fullName: string }>({ id: '', fullName: '' });
 const picture = "https://api.viphaui.com/" + userData.image;
 
-const handleRenew = () => {
-  formQrRef.value?.validate((errors) => {
-    if (!errors) {
-      loading.value = true;
-      renewQR(toRaw(formQR.q))
-        .then(({ data }) => {
-          user.value.id = data.data.user.id;
-          user.value.fullName = data.data.user.fullName;
-          push('/renew2/newQR');  
-        })
-        .catch((error) => {
-          console.error(error);
-          message.error('Có lỗi xảy ra');
-        })
-        .finally(() => {
-          loading.value = false;
-        });
-    }
-  });
-};
-console.log("123")
+  const handleRenew = () => {
+    formQrRef.value?.validate((errors) => {
+      if (!errors) {
+        loading.value = true;
+        renewQR(toRaw(formQR.q))
+          .then(({ data }) => {
+            user.value.id = data.data.user.id;
+            user.value.fullName = data.data.user.fullName;
+            push('/renew2/newQR');  
+          })
+          .catch((error) => {
+            if (error?.response?.status === 429) {
+              message.error('Bạn đang spam, vui lòng thử lại sau 1 tiếng nữa');
+            } else {
+              message.error('Thông tin không chính xác');
+            }
+          })
+          .finally(() => {
+            formQR.recaptcha = '';
+            recaptchaRef.value?.reset();
+            loading.value = false;
+          });
+      }
+    });
+  };
 const handleDownloadQR = () => {
   const el: HTMLElement = document.querySelector('.btn-hide')!;
   el.click();

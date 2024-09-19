@@ -65,5 +65,153 @@ import { copy } from 'v-copy'
 </div>
 </template>
 <style lang="scss" scoped>
-@import './qr.scss';
+@import '@styles/_mixins.scss';
+.signup {
+    display: flex;
+    box-sizing: border-box;
+    position: relative;
+    @include mobile{
+      display: flex;
+      flex-direction: column;
+    }
+}
+
+.left-body {
+    color: #fff;
+    background: linear-gradient(to right, #6ea3f1, #4c85db);
+    width: calc(50% - 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    @include mobile{
+      width: 100%;
+      padding: 20px;
+    }
+    .logo {
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        background: #fff;
+        border: 3px solid #0077fe;
+    }
+    
+    img {
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        border-radius: 50%;
+    }
+    
+    h1 {
+        font-size: 36px;
+        width: 70%;
+    }
+    
+    p {
+        width: 70%;
+        font-size: 18px;
+        line-height: 1.6;
+    }   
+}
+
+.right {
+    width: calc(50% - 40px);
+    margin: 20px;
+    flex-grow: 1;    
+    @include mobile{
+      width: 100%;
+    }
+    .right-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .avatar {
+        width: 200px;
+        border-radius: 15px;
+        border: 4px solid #6ea3f1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px; 
+        cursor: pointer;
+        
+        img {
+            width: 100%;
+            display: block;
+            border-radius: 15px;
+        }
+    }
+    p{
+        font-size: 18px;
+        padding: 0;
+        margin: 10px;
+    }
+    .p_copy{
+        .stk_copy{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        span{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        i{
+            position: absolute;
+            font-size: 16px;
+        }
+    }
+}
+
+
+.button{
+    display: flex;
+    justify-content: center;
+    button{
+        margin-top: 50px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 17px 70px;
+        margin-left: 20px;
+        border: none;
+        border-radius: 999px;
+        @include mobile{
+          padding: 13px 25px;
+          font-size: 12px;
+          margin-right: 25px;
+        }
+    }
+    .btn-continue{
+        background: #6ea3f1;
+        color: #fff;
+    }
+}
+.p_copy:last-child{
+    display: flex;
+    font-size: 16px;
+}
+.cloud{
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    right: 49%;
+    @include mobile{
+      display: none;
+    }
+}
+.birthday{
+    width: 25%;
+    bottom: 0;
+    right: 50%;
+    position: absolute;
+    @include mobile{
+      display: none;
+    }
+}
 </style>

@@ -48,7 +48,9 @@
     }
   })
   </script>
-<style scoped>
+<style scoped lang="scss">
+@import '@styles/_mixins.scss';
+
 img{
   width: 100%;
 }
@@ -72,6 +74,9 @@ img{
   overflow: hidden;
   transition: all 0.3s;
   cursor: pointer;
+  @include mobile{
+    right: 5%;
+  }
 }
 #supporter:hover{
   background: rgba(80, 131, 241, 0.75);
@@ -86,7 +91,7 @@ img{
     text-align: center;
     width: 200px;
     border-radius: 15px;
-    border: 2px solid #6ea3f1;
+    border: 3px solid #6ea3f1;
     margin-bottom: 20px;
     img{
     width: 100%;

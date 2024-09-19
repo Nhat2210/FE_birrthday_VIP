@@ -31,7 +31,7 @@ export const signup = (user: IUserSignup) => {
     formData.append('image', user.fileList[0]!.file as File);
   }
 
-  return api.post<APIUserResponse>('/v1/auth/signup', formData, config);
+  return api.post<APIUserResponse>('/v1/users/signup', formData, config);
 };
 
 export const checkInFromQrCode = (qrCodeResult: string) => {
@@ -55,7 +55,7 @@ export const checkInFromFace = (image: File) => {
 };
 
 export const renewQR = (q: string) => {  
-  return api.get<APIUserResponse>('api/v1/users/renew-qr', {
+  return api.get<APIUserResponse>('/api/v1/users/renew-qr', {
     params: { q },
   });
 };

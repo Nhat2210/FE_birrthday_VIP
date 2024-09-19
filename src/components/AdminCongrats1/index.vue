@@ -73,20 +73,28 @@
 </template>
 
 <style scoped lang="scss">
-@import '@styles/mixins';
+@import '@styles/_mixins.scss';
 #admin-congratulation{
     min-height: 100vh;
     background-color: #fff;
     padding-bottom: 100px;
+    box-sizing: border-box;
+    overflow: hidden;
     .main_title{
         h2{
             padding-top: 100px;
             background: linear-gradient(to right, #398ae7, #8271bb);
             -webkit-background-clip: text; 
             color: transparent; 
+            @include mobile{
+                padding-top: 70px;
+            }
         }
         h3{
             margin-bottom: 50px;
+            @include mobile{
+                margin-bottom: 0;
+            }
         }
         span{
             background: linear-gradient(to right, #398ae7, #8271bb);
@@ -96,7 +104,7 @@
     }
     h2,h3{
         margin: 0;
-        font-size: 32px;
+        font-size: 40px;
         font-weight: bold;
         text-align: center;
         text-transform: uppercase;

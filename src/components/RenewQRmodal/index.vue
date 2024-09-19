@@ -24,6 +24,7 @@ const handleButton = () => {
     
 
   <style lang="scss" scoped>
+  @import '@styles/_mixins.scss';
   img{
     width: 100%;
   }
@@ -47,6 +48,9 @@ const handleButton = () => {
     overflow: hidden;
     transition: all 0.3s;
     cursor: pointer;
+    @include mobile{
+      right: 5%;
+    }
   }
   #supporter:hover{
     background: rgba(80, 131, 241, 0.75);

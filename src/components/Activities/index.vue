@@ -1,4 +1,10 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useRouter } from 'vue-router';
+const { push } = useRouter();
+const handleRouter = () => {
+  push('/signup')
+}
+</script>
 
 <template>
   <div class="wrapper">
@@ -21,15 +27,19 @@
       effect="custom"
       :transition-props="{ name: 'creative' }"
       show-arrow="true"
-      autoplay="true"
+      autoplay="false" 
       style="
       width: 45%;
-      height: 350px;"
+      object-fit: cover;
+      height: 350px;
+      border-radius: 15px;
+      "
       class="custom_arrow"
       :style="{
         '--n-arrow-color': '#6ea3f1',
         '--n-dot-color-focus': '#6ea3f1',
         '--n-dot-color-active': '#6ea3f1',
+
       }"
       >
         <n-carousel-item>
@@ -96,22 +106,28 @@
         data-aos-delay="200"
         data-aos-easing="ease-in-out"
         data-aos-offset="100"  
+        @click="handleRouter()"
         />
       </div>
     </div>
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+@import '@styles/_mixins.scss';
 .wrapper {
-  width: 100%;
   background: #f6f6f6;
-  height: 100vh;
   box-sizing: border-box;
+  padding: 100px 0;
+  @include mobile{
+    padding: 50px 0;
+  }
 }
-
 .n-carousel {
   margin-left: 100px;
+  @include mobile{
+    margin: 0 auto;
+  }
 }
 
 .infor {
@@ -122,18 +138,24 @@
   position: absolute;
   top: 100px;
   right: 100px;
+  @include mobile{
+    display: none;
+  }
 }
 
 .title {
   position: relative;
   margin: 0 auto;
-  font-size: 35px;
+  font-size: 40px;
   text-align: center;
   text-transform: uppercase;
-  padding-top: 100px;
   padding-bottom: 50px;
-  max-width: 600px;
+  max-width: 60%;
   z-index: 1;
+  @include mobile{
+    font-size: 22px;
+    max-width: 100%;
+  }
 }
 
 .title::before {
@@ -145,26 +167,47 @@
   height: 15px;
   background: linear-gradient(to bottom, #398ae7, #ffffff);
   z-index: -1;
+  @include mobile{
+    bottom: 50px;
+    left: 9px;
+  }
 }
 
 .carousel-img {
   width: 100%;
-  height: 350px;
   border-radius: 15px;
   object-fit: cover;
+  @include mobile{
+    width: 100%;
+    height: 350px;
+    margin: 0 auto;
+  }
 }
 
+.n-carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 .carousel-item-content {
   text-align: center;
   position: relative;
 }
-
 .carousel-caption {
-  margin-top: 10px;
+  position: absolute;
+  bottom: 100%;
   font-size: 16px;
   color: #333;
 }
-
+.n-carousel.n-carousel--bottom .n-carousel__arrow-group{
+  right: 0;
+  top: 0;
+}
+.n-carousel.n-carousel--show-arrow.n-carousel--bottom .n-carousel__dots{
+  top: 0;
+  left: 0;
+}
 :deep(.creative-enter-from),
 :deep(.creative-leave-to) {
   opacity: 0;

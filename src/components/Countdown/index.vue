@@ -69,6 +69,7 @@ const refactorNumber = (number: number): string | number => (number < 10 ? `0${n
 </template>
 
 <style lang="scss" scoped>
+@import '@styles/_mixins.scss';
     .countdown{
     position: relative;
     width: 100%;
@@ -83,6 +84,10 @@ const refactorNumber = (number: number): string | number => (number < 10 ? `0${n
             object-fit: cover;
             object-position: 100% 0;
             height: 550px;
+            @include mobile{
+                width: 99%;
+                height: 100%;
+            }
         }   
     }
     &_number{
@@ -92,7 +97,6 @@ const refactorNumber = (number: number): string | number => (number < 10 ? `0${n
         font-weight: 800;
         text-align: center;
         top: 50%;
-        
         font-family: 'VintageGlamour';
         src: url('@/assets/fonts/VintageGlamourRegular-ALX27.ttf') format('truetype');
          font-weight: normal;
@@ -103,6 +107,11 @@ const refactorNumber = (number: number): string | number => (number < 10 ? `0${n
         z-index: 10;
         display: flex;
         gap: 10px;
+        @include mobile{
+            font-size: 30px;
+            gap:3px;
+            margin-top: 10px;
+        }
         .group{
             display: flex;
             flex-direction: column;
@@ -110,6 +119,9 @@ const refactorNumber = (number: number): string | number => (number < 10 ? `0${n
         .label{
             font-size: 40px;
             font-family: "Lora", serif;
+            @include mobile{
+                font-size: 20px;
+            }
         }
     }
     }

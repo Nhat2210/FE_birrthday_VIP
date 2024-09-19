@@ -113,14 +113,8 @@ fire(0.1, {
         <!-- <Footer/> -->
          
         <!--start backtop -->
-        <n-back-top 
-        :right="40"
-        :builtin-theme-overrides="{
-                    iconColor:'#D1E9F6',
-                    iconColorHover: '#6ea3f2',
-                    textColorHover: '#5B99C2',
-        }"
-        />
+        <!-- <BackTop/> -->
+        <n-back-top :right="100" />
         <!-- end backtop -->
 
         <!-- start side button -->
@@ -136,8 +130,13 @@ fire(0.1, {
 
 </template>
 <style scoped lang="scss">
+
+@import '@styles/_mixins.scss';
+  *{
+    width: 100%;
+  }
     :deep(.n-back-top)  {
-        --n-icon-color: white; 
+        --n-icon-color: #6ea3f1; 
     }
     .scroll{
         z-index: 999;
@@ -159,6 +158,13 @@ fire(0.1, {
         &_img{
             height: calc(100vh - 60px);
             width: 100%;
+        }
+        @include mobile{
+          height: 200px;
+          &_img{
+            height: 100%;
+            width: 100%;
+          }
         }
     }
 

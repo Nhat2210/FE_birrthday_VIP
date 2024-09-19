@@ -14,65 +14,36 @@ const { push } = useRouter();
   </div>
 </button>
 </template>
-<style scoped>
+<style scoped lang="scss">
+@import '@styles/_mixins.scss';
 button {
-  --primary-color: #9bbff5;
-  --secondary-color: #fff;
-  --hover-color: #6ea3f1;
-  --arrow-width: 10px;
-  --arrow-stroke: 2px;
-  box-sizing: border-box;
-  border: 0;
-  border-radius: 15px;
-  color: var(--secondary-color);
-  padding: 1em 1.8em;
-  background: var(--primary-color);
-  display: flex;
-  transition: 0.2s background;
-  align-items: center;
-  gap: 0.6em;
-  font-weight: bold;
-  animation: swing 0.5s infinite;
-}
-
-button .arrow-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-button .arrow {
-  margin-top: 1px;
-  width: var(--arrow-width);
-  background: var(--primary-color);
-  height: var(--arrow-stroke);
-  position: relative;
-  transition: 0.2s;
-}
-
-button .arrow::before {
-  content: "";
-  box-sizing: border-box;
-  position: absolute;
-  border: solid var(--secondary-color);
-  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
-  display: inline-block;
-  top: -3px;
-  right: 3px;
-  transition: 0.2s;
-  padding: 3px;
-  transform: rotate(-45deg);
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #6ea3f1;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  @include mobile{
+    padding: 1em 1.2em;
+    font-size: 8px;
+  }
 }
 
 button:hover {
-  background-color: var(--hover-color);
+  background-color: #6ea3f1;
+  box-shadow: 0px 15px 20px rgba(118, 178, 225, 0.4);
+  color: #fff;
+  transform: translateY(-1px);
 }
 
-button:hover .arrow {
-  background: var(--secondary-color);
-}
-
-button:hover .arrow:before {
-  right: 0;
+button:active {
+  transform: translateY(-1px);
 }
 </style>

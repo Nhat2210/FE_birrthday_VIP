@@ -8,7 +8,7 @@ const handleClick = () =>{
 <template>
 <div class="wrapper">
     <div class="logo">
-        <img src="@/assets/img/favicon.png" alt="">
+        <a target="_blank" href="https://www.facebook.com/clbtienganhV.I.P.haui?locale=vi_VN"><img src="@/assets/img/favicon.png" alt=""></a>
     </div>
     <h1>Uh-Oh...</h1>
     <p>Hình như bạn đang đi lạc phải không</p>
@@ -20,6 +20,8 @@ const handleClick = () =>{
 <!-- <Footer/> -->
 </template>
 <style scoped lang="scss">
+@import '@styles/_mixins.scss';
+
 .wrapper{
     margin: 50px;
     .logo{
@@ -30,11 +32,24 @@ const handleClick = () =>{
         height: 120px;
         border-radius: 50%;
         border: 4px solid #6ea3f1;
+        @include mobile{
+            left: 40px;
+            top: 40px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
         img{
             width: 120px;
             height: 120px;
             border-radius: 50%;
             object-fit: contain;
+            @include mobile{
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                object-fit: contain;
+            }
         }
     }
     h1{
@@ -56,6 +71,7 @@ const handleClick = () =>{
         }
     }
     button{
+        display: block;
         margin: 0 auto;
         margin-top: 50px;
         border-radius: 999px;

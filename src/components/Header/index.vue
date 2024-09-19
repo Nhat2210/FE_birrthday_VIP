@@ -18,6 +18,7 @@ const handleRouter = () => {
     </div>
 </template>
 <style lang="scss" scoped>
+@import '@styles/_mixins.scss';
     *{
         margin: 0;
         padding: 0;
@@ -26,7 +27,7 @@ const handleRouter = () => {
     .container_menu{
         // position: fixed;
         // width: 100%;
-        z-index: 999;
+        // z-index: 999;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
     .list{
@@ -46,17 +47,22 @@ const handleRouter = () => {
             font-weight: 600;
         }
         a{
-            text-decoration: none;
-            color:black;
-            width: 100%;
             width: 10%;
-            overflow: hidden;
         }
         
         img{
             width: 70px;
             position: absolute;
             top: 0;
+            @include mobile{
+                width: 50px;
+                position: absolute;
+                left: 20px;
+            }
+        }
+        button{
+            @include mobile{
+            }
         }
 
     }

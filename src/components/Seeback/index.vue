@@ -17,12 +17,12 @@
         data-aos-delay="100"
         data-aos-easing="ease-in-out"
         data-aos-offset="100"
-        style="font-size: 20px;"
         >Nơi ta tìm lại miền ký ức xưa</p>
         </div>
 
         <n-tabs type="segment" 
         animated 
+        class="memory_segment"
         :style="{
         '--n-tab-text-color': '#fff',
         '--n-tab-padding': '13px 20px',
@@ -151,82 +151,124 @@
     </div>
 </template>
 <style scoped lang="scss">
-    @import '@styles/index.scss';
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+@import '@styles/_mixins.scss';
+    .memory {
+    padding: 100px 0;
+    background: #f6f6f6;
+    
+    @include mobile {
+        padding: 50px 0;
     }
-    .memory{
-        padding: 100px 0;
-        background: #f6f6f6;
-        &_text{
+    
+    &_text {
         padding-bottom: 100px;
-            &_title{
-                font-size: 40px;
-                text-align: center;
-                text-transform: uppercase;
-                span{
-                    background: linear-gradient(to right, #398ae7, #8271bb);
-                    -webkit-background-clip: text; 
-                    color: transparent; 
-                }
-            }
-            &_addInfor{
-                font-size: 18px;
-                text-align: center;
-            }
+        
+        @include mobile {
+            padding-bottom: 20px;
         }
-    }
-    .card{
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        &_infor{
-            width: 40%;
-            margin-top: 50px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            margin-left: 30px;
-            &_title{
-                font-size: 36px;
-                font-weight: 600;
+        
+        &_title {
+            font-size: 40px;
+            text-align: center;
+            text-transform: uppercase;
+            
+            @include mobile {
+                font-size: 22px;
+                width: 99%;
+            }
+            
+            span {
                 background: linear-gradient(to right, #398ae7, #8271bb);
-                -webkit-background-clip: text; 
-                color: transparent; 
-            }
-            &_button{
-                background: #9bbff5;
-                color:#fff;
-                border: none;
-                padding: 13px 0px;
-                border-radius: 15px;
-                font-size: 18px;
-                width: 220px;
-                margin: 15px 0;
-            }
-            &_content{
-                font-size: 16px;
-                line-height: 1.2;
+                -webkit-background-clip: text;
+                color: transparent;
             }
         }
-        &_image{
-            margin-top: 50px;;
-            width: 50%;
-            height: 400px;
-            border: 15px solid #fff;
-            border-radius: 15px;
-            overflow: hidden;
-            background:#fff;
-            img{
-                object-fit: cover;
-                width: 100%;
-                border-radius: 15px;
-                height: 100%;
+        
+        &_addInfor {
+            font-size: 18px;
+            text-align: center;
+            
+            @include mobile {
+                font-size: 18px;
             }
         }
     }
+}
 
-
+.card {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    
+    @include mobile {
+        flex-direction: column; // Layout dọc cho mobile
+        align-items: center;
+    }
+    
+    &_infor {
+        width: 40%;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 30px;
+        
+        @include mobile {
+            width: 90%;
+            margin-left: 0;
+            text-align: center;
+            align-items: center;
+        }
+        
+        &_title {
+            font-size: 36px;
+            font-weight: 600;
+            background: linear-gradient(to right, #398ae7, #8271bb);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        
+        &_button {
+            background: #9bbff5;
+            color: #fff;
+            border: none;
+            padding: 13px 0px;
+            border-radius: 15px;
+            font-size: 18px;
+            width: 220px;
+            margin: 15px 0;
+        }
+        
+        &_content {
+            font-size: 16px;
+            line-height: 1.2;
+        }
+    }
+    
+    &_image {
+        margin-top: 50px;
+        width: 50%;
+        height: 400px;
+        border: 15px solid #fff;
+        border-radius: 15px;
+        overflow: hidden;
+        background: #fff;
+        
+        @include mobile {
+            width: 90%;
+            height: auto; // Để ảnh tự động điều chỉnh kích thước cho mobile
+        }
+        
+        img {
+            object-fit: cover;
+            width: 100%;
+            border-radius: 15px;
+            height: 100%;
+            
+            @include mobile {
+                height: auto;
+            }
+        }
+    }
+}
 </style>

@@ -111,9 +111,6 @@ const safeKey = () => image.value || '';
   
       <n-modal v-model:show="showModal">
         <n-card style="width: 800px; height: 550px ; border-radius: 15px;box-sizing: border-box;" :bordered="false" size="huge" role="dialog" aria-modal="true">
-          <template #header-extra>
-            Tạo frame để hưởng ứng sinh nhật cùng chúng mình nhé!!
-          </template>
           <h2>Tạo frame avatar cùng chúng mình nhé !!!</h2>
 
           <div class="crop" style="height:350px ; display: flex; justify-content: space-between; margin: 20px 50px;">
@@ -136,7 +133,7 @@ const safeKey = () => image.value || '';
                 :modal="false"
               />
             </div>
-            <span v-else class="slot_image" style="width: 250px; height: 250px; border: 1px solid #398ae7; border-radius: 10px; display: flex; justify-content: center; align-items: center; text-align: center;">Hãy chọn bức ảnh mà bạn thích nhất nhé</span>
+            <span v-else class="slot_image" style="width: 250px; height: 250px; border: 3px solid #398ae7; border-radius: 10px; display: flex; justify-content: center; align-items: center; text-align: center;">Hãy chọn bức ảnh mà bạn thích nhất nhé</span>
             <div  class="frame-wrapper" style="position: relative; width: 250px; height: 250px;">
               <img src="@/assets/img/frame.png" alt="Frame" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; border-radius: 10px;">
               <img v-if="croppedImage" :src="croppedImage" alt="Cropped Image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; border-radius: 10px;">
@@ -156,7 +153,8 @@ const safeKey = () => image.value || '';
     </div>
   </template>
   
-  <style lang="css" scoped>
+  <style lang="scss" scoped>
+  @import '@styles/_mixins.scss';
   #supporter {
     z-index: 9999;
     position: fixed;
@@ -175,6 +173,9 @@ const safeKey = () => image.value || '';
     border: none;
     overflow: hidden;
     transition: all 0.3s;
+    @include mobile{
+      right: 5%;
+    }
   }
   
   #supporter:hover {
@@ -184,15 +185,22 @@ const safeKey = () => image.value || '';
     width: 30%;
   }
 .buttonUpload{
-    padding: 10px 40px;
     color: #333;
 }
 .buttonDownload{
-  padding: 10px 40px;
 }
 .button{
   display: flex;
   justify-content: space-around;
+}
+.btn{
+  border:1px solid #6ea3f1;
+  padding: 20px 40px;
+  border-radius:10px;
+}
+.btn:hover{
+  background: #6ea3f1;
+  color: #fff;
 }
 </style>
   
