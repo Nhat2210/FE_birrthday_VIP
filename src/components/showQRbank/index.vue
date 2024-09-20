@@ -57,7 +57,7 @@ img{
 #supporter {
   z-index: 9999;
   position: fixed;
-  right: 1.9%;
+  right: 1.5%;
   top: 50%;
   transform-origin: bottom center;
   transform: translate(0, -100%) rotateZ(-90deg) translateY(150%);

@@ -42,24 +42,23 @@
                         data-aos-duration="300"
                         data-aos-easing="ease-in-out"
                         data-aos-offset="100"              
-                        >V.I.P 11</div>
+                        >Hành Trình V.I.P 10</div>
                         <button class="card_infor_button"
                         data-aos="fade-right"
                         data-aos-duration="300"
                         data-aos-delay="100"
                         data-aos-easing="ease-in-out"
                         data-aos-offset="100"  
-                        >Vươn tầm cao mới</button>
+                        >Đoàn kết vững bước, dựng xây tương lai</button>
                         <div class="card_infor_content"
                         data-aos="fade-right"
                         data-aos-duration="300"
                         data-aos-delay="200"
                         data-aos-easing="ease-in-out"
                         data-aos-offset="100"  
-                        >11 năm một chặng đường, trải qua mỗi thế hệ,<br>
-                             HIT là những hoài niệm tiếc nuối của một thời tuổi trẻ,<br>
-                              là nơi mà ở đó các bạn được học và được là chính mình,<br>
-                             để rồi khi nhìn lại sẽ càng thấy trân trọng và tự hào…
+                        >10 năm một chặng đường khẳng định sức mạnh của sự đoàn kết. <br>
+                         Kề vai sát cánh vai, cùng nhau vượt qua những khó khăn, <br>
+                          thách thức để kiến tạo một tương lai tươi sáng!
                         </div>
                     </div>
                     <div class="card_image"
@@ -80,23 +79,24 @@
                         data-aos-duration="300"
                         data-aos-easing="ease-in-out"
                         data-aos-offset="100"              
-                        >V.I.P 12</div>
+                        >Hành Trình V.I.P 11</div>
                         <div class="card_infor_button"
                         data-aos="fade-right"
                         data-aos-duration="300"
                         data-aos-easing="ease-in-out"
-                        data-aos-offset="100"              
-                        >Vươn tầm cao mới</div>
+                        data-aos-offset="100"        
+                        style="text-align: center;"      
+                        >Tiếp nối đam mê, vươn xa cùng phát triển</div>
                         <div class="card_infor_content"
                         data-aos="fade-right"
                         data-aos-delay="300"
                         data-aos-duration="300"
                         data-aos-easing="ease-in-out"
                         data-aos-offset="100"  
-                        >12 năm một chặng đường, trải qua mỗi thế hệ,<br>
-                             HIT là những hoài niệm tiếc nuối của một thời tuổi trẻ,<br>
-                              là nơi mà ở đó các bạn được học và được là chính mình,<br>
-                             để rồi khi nhìn lại sẽ càng thấy trân trọng và tự hào…
+                        >12 Với ngọn lửa đam mê luôn cháy bỏng, cùng nhau viết tiếp giai điệu<br> 
+                        thanh xuân rực rỡ. Một năm với đầy ắp những kỷ niệm khó quên. <br>
+                        Những trái tim cùng chung nhịp đập, vượt qua mọi khó khăn,<br> thách thức,
+                        vươn xa cùng phát triển!
                         </div>
                     </div>
                     <div class="card_image"
@@ -117,24 +117,23 @@
                         data-aos-duration="300"
                         data-aos-easing="ease-in-out"
                         data-aos-offset="100"              
-                        >V.I.P 13</div>
+                        >Hành Trình V.I.P 12</div>
                         <button class="card_infor_button"
                         data-aos="fade-right"
                         data-aos-duration="300"
                         data-aos-delay="100"
                         data-aos-easing="ease-in-out"
                         data-aos-offset="100"  
-                        >Vươn tầm cao mới</button>
+                        >Phát triển không ngừng, khẳng định vươn xa</button>
                         <div class="card_infor_content"
                         data-aos="fade-right"
                         data-aos-duration="300"
                         data-aos-delay="200"
                         data-aos-easing="ease-in-out"
                         data-aos-offset="100"  
-                        >11 năm một chặng đường, trải qua mỗi thế hệ,<br>
-                             HIT là những hoài niệm tiếc nuối của một thời tuổi trẻ,<br>
-                              là nơi mà ở đó các bạn được học và được là chính mình,<br>
-                             để rồi khi nhìn lại sẽ càng thấy trân trọng và tự hào…
+                        >Một năm của sự đổi mới và phát triển! Những bước tiến vượt bậc, <br>
+                        những thay đổi tích cực đã phần nào khẳng định được vị thế <br>
+                        và sẵn sàng chinh phục những đỉnh cao mới!
                         </div>
                     </div>
                     <div class="card_image"
@@ -162,7 +161,6 @@
     
     &_text {
         padding-bottom: 100px;
-        
         @include mobile {
             padding-bottom: 20px;
         }
@@ -185,7 +183,7 @@
         }
         
         &_addInfor {
-            font-size: 18px;
+            font-size: 2rem;
             text-align: center;
             
             @include mobile {
@@ -212,6 +210,7 @@
         flex-direction: column;
         align-items: flex-start;
         margin-left: 30px;
+        justify-content: center;
         
         @include mobile {
             width: 90%;
@@ -232,10 +231,10 @@
             background: #9bbff5;
             color: #fff;
             border: none;
-            padding: 13px 0px;
+            padding: 13px 10px;
             border-radius: 15px;
             font-size: 18px;
-            width: 220px;
+            width: 70%;
             margin: 15px 0;
         }
         
@@ -247,8 +246,7 @@
     
     &_image {
         margin-top: 50px;
-        width: 50%;
-        height: 400px;
+        width: 40%;
         border: 15px solid #fff;
         border-radius: 15px;
         overflow: hidden;

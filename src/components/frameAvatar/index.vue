@@ -56,8 +56,8 @@
     croppedImg.src = croppedImage.value;
     frameImg.src = frameImage;
 
-    canvas.width = 250;
-    canvas.height = 250;
+    canvas.width = 900;
+    canvas.height = 900;
 
     // Sử dụng Promise để đảm bảo cả hai ảnh được tải xong
     const loadImage = (img: HTMLImageElement): Promise<void> => {
@@ -141,7 +141,7 @@ const safeKey = () => image.value || '';
           </div>
 
           <div class="button">
-            <n-button class="btn buttonUpload"><label><input hidden type="file" @change="onFileChange" :key="safeKey()"/>Tải ảnh</label></n-button>
+            <n-button class="btn buttonUpload"><label><input hidden type="file" @change="onFileChange" :key="safeKey()"/>Tải ảnh lên</label></n-button>
             <n-button class="btn cropAvatar" @click="cropImage">Tạo frame avatar</n-button>
             <n-button class="btn buttonDownload" @click="downloadImage">Tải xuống</n-button>
           </div>
@@ -158,7 +158,7 @@ const safeKey = () => image.value || '';
   #supporter {
     z-index: 9999;
     position: fixed;
-    right: 1.9%;
+    right: 1.5%;
     top: 60%;
     transform-origin: bottom center;
     transform: translate(0, -100%) rotateZ(-90deg) translateY(150%);

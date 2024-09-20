@@ -71,6 +71,7 @@ import { copy } from 'v-copy'
 @import '@styles/_mixins.scss';
 .signup {
     display: flex;
+    height: 100vh;
     box-sizing: border-box;
     position: relative;
     @include mobile{

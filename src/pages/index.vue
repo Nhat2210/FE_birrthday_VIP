@@ -1,42 +1,69 @@
 <script lang="ts" setup>
+// import confetti from 'canvas-confetti';
+
+
+// const count: number = 500;
+// const defaults: { origin: { y: number } } = {
+//   origin: { y: 0.9 },
+// };
+
+// function fire(particleRatio: number, opts: object): void {
+//   confetti({
+//     ...defaults,
+//     ...opts,
+//     particleCount: Math.floor(count * particleRatio),
+//   });
+// }
+
+// fire(0.25, {
+//   spread: 26,
+//   startVelocity: 55,
+// });
+// fire(0.2, {
+//   spread: 60,
+// });
+// fire(0.35, {
+//   spread: 100,
+//   decay: 0.91,
+//   scalar: 0.8,
+// });
+// fire(0.1, {
+//   spread: 120,
+//   startVelocity: 25,
+//   decay: 0.92,
+//   scalar: 1.2,
+// });
+// fire(0.1, {
+//   spread: 120,
+//   startVelocity: 45,
+// });
+
+
+
 import confetti from 'canvas-confetti';
+const defaults = { startVelocity: 20, spread: 360, ticks: 100, zIndex: 9999 };
 
-
-const count: number = 500;
-const defaults: { origin: { y: number } } = {
-  origin: { y: 0.9 },
-};
-
-function fire(particleRatio: number, opts: object): void {
-  confetti({
-    ...defaults,
-    ...opts,
-    particleCount: Math.floor(count * particleRatio),
-  });
+function randomInRange(min: number, max: number) {
+  return Math.random() * (max - min) + min;
 }
 
-fire(0.25, {
-  spread: 26,
-  startVelocity: 55,
-});
-fire(0.2, {
-  spread: 60,
-});
-fire(0.35, {
-  spread: 100,
-  decay: 0.91,
-  scalar: 0.8,
-});
-fire(0.1, {
-  spread: 120,
-  startVelocity: 25,
-  decay: 0.92,
-  scalar: 1.2,
-});
-fire(0.1, {
-  spread: 120,
-  startVelocity: 45,
-});
+
+const interval = setInterval(function() {
+  const particleCount = 75; 
+  
+  confetti(
+    Object.assign({}, defaults, {
+      particleCount,
+      origin: { x: randomInRange(0.1, 0.9), y: randomInRange(0.1, 0.9) }, 
+    })
+  );
+}, 1000); 
+setTimeout(function() {
+  clearInterval(interval);
+}, 10000);
+
+
+
 // window.onscroll = function() {
 //     myFunction();
 // };
@@ -154,11 +181,14 @@ fire(0.1, {
     .mainbackground{
         // padding-top: 60px;
         object-fit: cover;
-        height: calc(100vh - 60px);
         &_img{
-            height: calc(100vh - 60px);
             width: 100%;
+            height: 700px;
+            @media (min-width: 1700px) {
+              height: 1000px;
+            }
         }
+
         @include mobile{
           height: 200px;
           &_img{

@@ -1,9 +1,11 @@
 <script setup lang="ts">
 const { push } = useRouter();
 const handleRouter = () => {
-    push('/signup')
+    push('/signup');
 }
 </script>
+
+
 <template>
     <div class="wrapper">
         <div class="maintitle">
@@ -22,8 +24,7 @@ const handleRouter = () => {
             data-aos-easing="ease-in-out"
             data-aos-offset="150"
             >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo magni, facilis sapiente, veniam accusamus, quam molestias facere saepe eligendi fugit error. Cum officiis repellendus ad sunt iure laboriosam reprehenderit aperiam.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore repellendus iure, repudiandae et modi est deserunt nisi enim aspernatur soluta quas minima voluptas quis vero ullam fugit! Magni, corporis debitis.
+            10/10/2011 - 10/10/2024, chặng đường 13 năm đã đi qua với biết bao thăng trầm, nơi kết nối những tâm hồn đồng điệu đam mê, cùng nhau viết nên bản giao hưởng thời gian đầy cảm hứng. Những kỷ niệm đáng nhớ đã được khắc ghi qua từng thế hệ thành viên của CLB. Mỗi thế hệ là một giai điệu, mỗi VIPer lại mang trong mình một âm hưởng riêng biệt. Hãy cùng chúng tớ tạo nên giai điệu tuyệt vời nhất cho bản giao hưởng thứ 13 tràn ngập cảm xúc này nhé!
             </p>
             <div class="maintitle_button"
             >
@@ -37,7 +38,6 @@ const handleRouter = () => {
 .wrapper
     {
         background-color: #f6f6f6;
-        height: 100vh;
         @include mobile{
             height: 100%;
         }
@@ -91,12 +91,13 @@ const handleRouter = () => {
             text-align: center;
             display: block;
             margin: 0 auto;
-            padding: 20px 0;
-            margin-bottom: 30px;
+            padding: 30px 0;
+            margin-bottom: 10px;
             @include mobile{
                 font-size: 13px;
                 width: 90%;
                 margin-bottom: 0;
+                padding: 15px 0;
             }
         }
     }

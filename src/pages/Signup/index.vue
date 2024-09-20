@@ -328,7 +328,7 @@ onMounted(() => {
     display: flex;   
     box-sizing: border-box; 
     position: relative;
-    width: 100%;
+    height: 100vh;
     @include mobile{
         display: flex;
         flex-direction: column;
@@ -338,6 +338,7 @@ onMounted(() => {
     color: #fff;
     background: linear-gradient(to right,  #6ea3f1,#4c85db);
     width: calc(50% - 100px);
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -413,7 +414,7 @@ onMounted(() => {
 }
 .birthday{
     width: 30%;
-    bottom: 0;
+    bottom: -100px;
     right: 50%;
     position: absolute;
     @include mobile{

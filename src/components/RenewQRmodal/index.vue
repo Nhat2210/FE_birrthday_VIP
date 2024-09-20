@@ -31,7 +31,7 @@ const handleButton = () => {
   #supporter {
     z-index: 9999;
     position: fixed;
-    right: 2%;
+    right: 1.5%;
     top: 40%;
     transform-origin: bottom center;
     transform: translate(0, -100%) rotateZ(-90deg) translateY(150%);

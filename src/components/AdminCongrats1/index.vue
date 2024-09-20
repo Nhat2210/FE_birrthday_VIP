@@ -22,7 +22,7 @@
                 data-aos-easing="ease-in-out"
                 data-aos-offset="100"  
                 >
-                    <img src="@/assets/img/huong.jpg" alt="" class="avatar">
+                    <img src="@/assets/img/huong2.jpg" alt="" class="avatar">
                     <div class="name">Dương Thu Hương</div>
                     <div class="position">Phó chủ nhiệm</div>
                     <div class="greeting">
@@ -44,8 +44,8 @@
                     <div class="position">Chủ nhiệm</div>
                     <div class="greeting">
                         <span class="content">
-                            Bước sang tuổi thứ 13, xin chúc cho V.I.P ngày càng thành công hơn nữa! Chúc cho tất cả thành viên và cựu thành viên của CLB nhiều sức khỏe, học tập thật tốt và vững bước trên con đường mình đã chọn.
-                            Hãy cùng đồng hành cùng V.I.P English Club trong những chặng đường sắp tới bạn nhé!
+                            Quyền: Bước sang tuổi thứ 13, xin chúc cho V.I.P English Club ngày càng thành công và phát triển vững mạnh! Chúc cho tất cả thành viên của đại gia đình nhà mình luôn dồi dào sức khỏe, học tập tốt và thành công trên con đường đã chọn. Mong rằng V.I.P sẽ mãi trong tim chúng ta, sẽ luôn là một kỷ niệm tuyệt vời thời sinh viên nhé
+                            Hãy cùng đồng hành cùng V.I.P English Club
                         </span> 
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                 data-aos-easing="ease-in-out"
                 data-aos-offset="100"  
                 >
-                    <img src="@/assets/img/minh.jpg" alt="" class="avatar">
+                    <img src="@/assets/img/minmin.jpg" alt="" class="avatar">
                     <div class="name">Nguyễn Hồng Minh</div>
                     <div class="position">Phó chủ nhiệm</div>
                     <div class="greeting">
@@ -75,7 +75,6 @@
 <style scoped lang="scss">
 @import '@styles/_mixins.scss';
 #admin-congratulation{
-    min-height: 100vh;
     background-color: #fff;
     padding-bottom: 100px;
     box-sizing: border-box;

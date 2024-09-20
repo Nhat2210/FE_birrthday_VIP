@@ -31,32 +31,27 @@ const handleRouter = () => {
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
     .list{
-        padding: 9px 50px;
+        height: 80px;
+        padding: 0 50px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         background: #fff;
         cursor: pointer;
+        @include mobile{
+            height: 50px;
+        }
         &_item{
-            font-size: 15px;
             list-style-type: none;
-            font-weight: 500;
-        }
-        &_item:first-child{
-            font-size: 17px;
-            font-weight: 600;
-        }
-        a{
-            width: 10%;
-        }
-        
+            overflow: hidden;
+        }        
         img{
-            width: 70px;
-            position: absolute;
-            top: 0;
+            width: 100px;
+            align-self: center;
             @include mobile{
                 width: 50px;
                 position: absolute;
+                top: 0;
                 left: 20px;
             }
         }

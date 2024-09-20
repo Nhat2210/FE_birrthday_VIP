@@ -29,16 +29,17 @@ const handleRouter = () => {
       show-arrow="true"
       autoplay="false" 
       style="
-      width: 45%;
-      object-fit: cover;
+      width: 35%;
+      height: 700px;
+      /* object-fit: cover; */
       height: 350px;
       border-radius: 15px;
       "
-      class="custom_arrow"
       :style="{
         '--n-arrow-color': '#6ea3f1',
         '--n-dot-color-focus': '#6ea3f1',
         '--n-dot-color-active': '#6ea3f1',
+        '--n-arrow-background': '#333',
 
       }"
       >
@@ -179,17 +180,10 @@ const handleRouter = () => {
   object-fit: cover;
   @include mobile{
     width: 100%;
-    height: 350px;
     margin: 0 auto;
   }
 }
 
-.n-carousel-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
 .carousel-item-content {
   text-align: center;
   position: relative;

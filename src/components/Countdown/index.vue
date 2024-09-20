@@ -80,20 +80,22 @@ const refactorNumber = (number: number): string | number => (number < 10 ? `0${n
             display: block;
             margin: 0 auto;
             width: 70%;
-            border-radius: 15px;
+            border-radius: 3rem;
             object-fit: cover;
             object-position: 100% 0;
-            height: 550px;
             @include mobile{
                 width: 99%;
                 height: 100%;
+            }
+            @media screen {
+                
             }
         }   
     }
     &_number{
         position: absolute;
         color: white;
-        font-size: 100px;
+        font-size: 12.5rem;
         font-weight: 800;
         text-align: center;
         top: 50%;
@@ -107,10 +109,18 @@ const refactorNumber = (number: number): string | number => (number < 10 ? `0${n
         z-index: 10;
         display: flex;
         gap: 10px;
+        @media (min-width: 2000px) {
+            font-size: 22rem; 
+            gap: 4rem;
+        }
         @include mobile{
-            font-size: 30px;
+            font-size: 5rem;
             gap:3px;
             margin-top: 10px;
+        }
+        @media (min-width: 600px) and (max-width: 1024px) {
+            font-size: 7rem;
+            gap: 0;
         }
         .group{
             display: flex;
@@ -121,6 +131,14 @@ const refactorNumber = (number: number): string | number => (number < 10 ? `0${n
             font-family: "Lora", serif;
             @include mobile{
                 font-size: 20px;
+            }
+            @media (min-width: 2000px) {
+                font-size: 7rem; 
+                gap: 4rem;
+            }
+            @media (min-width: 600px) and (max-width: 1024px) {
+                font-size: 3rem;
+
             }
         }
     }
