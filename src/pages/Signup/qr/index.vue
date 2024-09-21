@@ -7,20 +7,26 @@ import { useUserStore } from '@/stores/user';
 const useStore = useUserStore();
 const userData = useStore.$state;
 import { copy } from 'v-copy'
+const name = userData.fullName;
+const gen = userData.generation
+const linkqr = `https://api.vietqr.io/image/970436-1025090176-IJzOL5G.jpg?accountName=NGUYEN%20THI%20HUONG&addInfo=${name}%20khoa${gen}%20dong%20tien%20sinh%20nhat`
 
-const copyToClipboard = (value: number) => {
+const copyToClipboard = (value: string) => {
   const tempInput = document.createElement('input');
-  tempInput.value = value.toString(); // Chuyển số thành chuỗi
-  document.body.appendChild(tempInput); // Thêm vào DOM
-  tempInput.select(); // Chọn nội dung
-  document.execCommand('copy'); // Thực hiện lệnh copy
-  document.body.removeChild(tempInput); // Xóa temporary input
+  tempInput.value = value; 
+  document.body.appendChild(tempInput); 
+  tempInput.select(); 
+  document.execCommand('copy'); 
+  document.body.removeChild(tempInput); 
 };
+
 
 const copyAndNotify = (value: number) => {
-  copyToClipboard(value); // Sao chép giá trị
-  message.success('Sao chép vào bộ nhớ tạm thành công'); // Hiển thị thông báo
+  copyToClipboard(value.toString());
+  message.success('Sao chép vào bộ nhớ tạm thành công'); 
+  console.log('Sao chép giá trị:', value); 
 };
+
 </script>
 
 <template>
@@ -37,7 +43,7 @@ const copyAndNotify = (value: number) => {
   <div class="right">
     <div class="right-body">
         <div class="avatar">
-          <img src="@/assets/img/qrthanhtoan.png" alt="">
+          <img :src="linkqr" alt="">
         </div>
         <p>Chủ tài khoản</p>
         <p>Ngân hàng Vietcombank</p>
@@ -51,13 +57,12 @@ const copyAndNotify = (value: number) => {
                         type="primary"
                         @click="copyAndNotify(1025090176)"
                     ></n-button>
-                    <i class="fa-regular fa-clipboard" v-copy="1025090176" @click="message.success('Sao chép vào bộ nhớ tạm thành công')"></i>
-                </span>
+                    <i class="fa-regular fa-clipboard" @click="copyAndNotify(1025090176)"></i>                </span>
             </p>
         </div>
         <p style="width: 70%;">Với kinh phí đóng về CLB là 290.000đ mỗi người hãy quét mã QR sau với nội dung nội dung:</p>
         <div class="p_copy">
-            <p> - {{ userData.fullName || 'Ho va ten' }} - Dong tien sinh nhat</p>
+            <p> {{ userData.fullName || 'Ho va ten' }} - Khóa {{ userData.generation || 'Khóa' }} - chuyển tiền sinh nhật 2024</p>
             <!-- <span>
                     <n-button
                         strong
@@ -83,7 +88,6 @@ const copyAndNotify = (value: number) => {
 @import '@styles/_mixins.scss';
 .signup {
     display: flex;
-    height: 100vh;
     box-sizing: border-box;
     position: relative;
     @include mobile{
@@ -145,7 +149,9 @@ const copyAndNotify = (value: number) => {
     }
     
     .avatar {
-        width: 200px;
+        width:250px;
+        height: 250px;
+        padding: 10px;
         border-radius: 15px;
         border: 4px solid #6ea3f1;
         display: flex;
@@ -215,6 +221,7 @@ const copyAndNotify = (value: number) => {
 .cloud{
     width: 10%;
     height: 100%;
+
     position: absolute;
     right: 49%;
     @include mobile{

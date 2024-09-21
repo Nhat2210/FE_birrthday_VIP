@@ -33,7 +33,7 @@
         <p>Ngân hàng: VietcomBank</p>
         <p>Số tài khoản: 1025090176</p>
         <p>Với kinh phí đóng về CLB là 290.000đ mỗi người, hãy quét mã QR sau với nội dung:</p>
-        <p>Họ tên + Khóa + "chuyển tiền sinh nhật 2024"</p>
+        <p>Họ tên - Khóa - "chuyển tiền sinh nhật 2024"</p>
         <button @click="showModal=false">Đóng</button>
       </div>
       </n-card>

@@ -9,8 +9,6 @@ import { ref, reactive } from 'vue';
 import { useUserStore } from '@/stores/user';
 import QRCodeVue3  from 'qrcode-vue3';
 
-//noti here
-
 
 
 
@@ -124,7 +122,7 @@ const rules = {
     validator(rule: FormItemRule, value: string) {
       if (!value) {
         return new Error('Vui lòng nhập email');
-      } else if (!/^[a-zA-Z0-9](\.?[a-zA-Z0-9]){5,}@g(oogle)?mail\.com$/.test(value)) {
+      } else if (!/^[a-zA-Z0-9](\.?[a-zA-Z0-9])+@g(oogle)?mail\.com$/.test(value)) {
         return new Error('Định dạng email không hợp lệ (chỉ chấp nhận gmail)');
       }
       return true;
@@ -177,25 +175,60 @@ const handleValidate = (e: MouseEvent) => {
     }
   });
 };
+// const handleSignup = async () => {
+//   loading.value = true;
+//   try {
+//     const { data } = await signup(formValue);
+    
+//     const userSignupRes = data.data
+//     useStore.setUser({
+//       id: userSignupRes.id + '',
+//       fullName: userSignupRes.fullName,
+//       email: userSignupRes.email,
+//       generation: userSignupRes.generation, 
+//       phoneNumber: userSignupRes.phoneNumber,
+//       facebook: userSignupRes.facebook,
+//       image: userSignupRes.image,
+//     }
+//     )
+//     // noti 
+//     message.success('Bạn đã đăng ký thành công!')
+//     console.log('dk thành công')
+//     push('/signup/confirm');
+//   } catch (err: any) {
+//     const messageError = err?.response?.data?.message || err.message;
+//     message.error(messageError);
+//   } finally {
+//     loading.value = false;
+//   }
+// };
+
 const handleSignup = async () => {
   loading.value = true;
   try {
-    const { data } = await signup(formValue);
-    
-    const userSignupRes = data.data
+    const userSignupRes = {
+      id: '123',
+      fullName: formValue.fullName,
+      email: formValue.email,
+      generation: formValue.generation,
+      phoneNumber: formValue.phoneNumber,
+      facebook: formValue.facebook,
+      image: formValue.image || 'default-image-url',
+    };
+
     useStore.setUser({
-      id: userSignupRes.id + '',
+      id: userSignupRes.id,
       fullName: userSignupRes.fullName,
       email: userSignupRes.email,
-      generation: userSignupRes.generation, 
+      generation: userSignupRes.generation,
       phoneNumber: userSignupRes.phoneNumber,
       facebook: userSignupRes.facebook,
       image: userSignupRes.image,
-    }
-    )
-    // noti 
-    message.success('Bạn đã đăng ký thành công!')
-    console.log('dk thành công')
+    });
+
+    message.success('Bạn đã đăng ký thành công!');
+    console.log('Đăng ký thành công');
+
     push('/signup/confirm');
   } catch (err: any) {
     const messageError = err?.response?.data?.message || err.message;
@@ -204,6 +237,8 @@ const handleSignup = async () => {
     loading.value = false;
   }
 };
+
+
 const generateNoteBank = () => {
   const unsignedName = formValue.fullName.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
   return `${unsignedName} - K${formValue.generation} - Dong tien sinh nhat`;
@@ -321,7 +356,9 @@ onMounted(() => {
             </n-upload>
           </n-space>
         </n-form-item>
-        <button class="btn btn-primary"  @click="handleSignup()">Đăng ký ngay</button>
+        <button class="btn btn-primary"  @click="handleSignup()" :disabled="loading">
+          <n-spin v-if="loading" />  
+        Đăng ký ngay</button>
       </n-form>  
     </div>
   </div>
@@ -335,7 +372,7 @@ onMounted(() => {
     display: flex;   
     box-sizing: border-box; 
     position: relative;
-    height: 100vh;
+    // height: 100vh;
     @include mobile{
         display: flex;
         flex-direction: column;
@@ -345,7 +382,7 @@ onMounted(() => {
     color: #fff;
     background: linear-gradient(to right,  #6ea3f1,#4c85db);
     width: calc(50% - 100px);
-    height: 100vh;
+    // height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -421,7 +458,7 @@ onMounted(() => {
 }
 .birthday{
     width: 30%;
-    bottom: -100px;
+    bottom: 0;
     right: 50%;
     position: absolute;
     @include mobile{
