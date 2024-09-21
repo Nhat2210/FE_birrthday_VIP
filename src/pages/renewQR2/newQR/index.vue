@@ -27,9 +27,9 @@ const handleDownloadQR = () => {
   <div class="right">
     <div class="right-body">
       <h1>Xin chào anh/chị</h1>
-      <p>Cảm ơn anh/chị đã tham dự buổi tiệc sinh nhật cùng CLB Tin học V.I.P</p>
+      <p>Cảm ơn anh/chị đã tham dự buổi tiệc sinh nhật cùng CLB Tiếng Anh V.I.P</p>
       <div class="avatar">
-        <img src="@/assets/img/fb.png" alt="">
+        <img src="@/assets/img/qrthanhtoan.png" alt="">
       </div>
       <p>CLB xin trân trọng cảm ơn !</p>
     </div>

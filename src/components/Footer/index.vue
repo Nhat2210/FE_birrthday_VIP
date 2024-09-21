@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="copyright">
-            Copyright © 2024 V.I.P Team of Developers
+            Copyright © 2024 V.I.P Developers
         </div>
     </footer>
 </template>

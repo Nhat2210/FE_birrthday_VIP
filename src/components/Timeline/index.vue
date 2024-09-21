@@ -26,7 +26,7 @@ const handleRouter = () => {
                 class="test"
                 type="info"
                 title="Chia sẻ thông tin cá nhân để đăng ký"
-                time="2018-04-03 20:46"
+                time="."
                 />
                 <n-timeline-item
                 data-aos="fade-left"
@@ -36,7 +36,7 @@ const handleRouter = () => {
 
                 type="info"
                 title="Xác nhận thông tin để đăng ký"
-                time="2018-04-03 20:46"
+                time="."
                 />
                 <n-timeline-item
                 data-aos="fade-right"
@@ -46,7 +46,8 @@ const handleRouter = () => {
 
                 type="info"
                 title="Chuyển khoản để hoàn tất đăng ký"
-                time="2018-04-03 20:46"
+                time="."
+
                 />
                 <n-timeline-item
                 data-aos="fade-left"
@@ -56,7 +57,7 @@ const handleRouter = () => {
 
                 type="info"
                 title="Lưu lại mã QR checkin"
-                time="2018-04-03 20:46"
+                time="."
                 />
                 <n-timeline-item
                 data-aos="fade-right"
@@ -66,7 +67,7 @@ const handleRouter = () => {
 
                 type="info"
                 title="Dùng mã QR để checkin khi tham buổi tiệc"
-                time="2018-04-03 20:46"
+                time="2024-10-05"
                 />
                 <n-timeline-item
                 data-aos="fade-left"
@@ -76,7 +77,7 @@ const handleRouter = () => {
 
                 type="info"
                 title="Hoặc checkin bằng nhận diện khuôn mặt"
-                time="2018-04-03 20:46"
+                time="2024-10-05"
                 size="larger"
                 />
             </n-timeline>

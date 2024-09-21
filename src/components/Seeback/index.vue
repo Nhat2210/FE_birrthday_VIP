@@ -42,7 +42,7 @@
                         data-aos-duration="300"
                         data-aos-easing="ease-in-out"
                         data-aos-offset="100"              
-                        >Hành Trình V.I.P 10</div>
+                        >Hành Trình V.I.P Khóa 10</div>
                         <button class="card_infor_button"
                         data-aos="fade-right"
                         data-aos-duration="300"
@@ -79,7 +79,7 @@
                         data-aos-duration="300"
                         data-aos-easing="ease-in-out"
                         data-aos-offset="100"              
-                        >Hành Trình V.I.P 11</div>
+                        >Hành Trình V.I.P Khóa 11</div>
                         <div class="card_infor_button"
                         data-aos="fade-right"
                         data-aos-duration="300"
@@ -117,7 +117,7 @@
                         data-aos-duration="300"
                         data-aos-easing="ease-in-out"
                         data-aos-offset="100"              
-                        >Hành Trình V.I.P 12</div>
+                        >Hành Trình V.I.P Khóa 12</div>
                         <button class="card_infor_button"
                         data-aos="fade-right"
                         data-aos-duration="300"
@@ -234,7 +234,7 @@
             padding: 13px 10px;
             border-radius: 15px;
             font-size: 18px;
-            width: 70%;
+            width: 80%;
             margin: 15px 0;
         }
         

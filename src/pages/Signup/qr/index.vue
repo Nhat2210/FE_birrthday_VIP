@@ -7,6 +7,20 @@ import { useUserStore } from '@/stores/user';
 const useStore = useUserStore();
 const userData = useStore.$state;
 import { copy } from 'v-copy'
+
+const copyToClipboard = (value: number) => {
+  const tempInput = document.createElement('input');
+  tempInput.value = value.toString(); // Chuyển số thành chuỗi
+  document.body.appendChild(tempInput); // Thêm vào DOM
+  tempInput.select(); // Chọn nội dung
+  document.execCommand('copy'); // Thực hiện lệnh copy
+  document.body.removeChild(tempInput); // Xóa temporary input
+};
+
+const copyAndNotify = (value: number) => {
+  copyToClipboard(value); // Sao chép giá trị
+  message.success('Sao chép vào bộ nhớ tạm thành công'); // Hiển thị thông báo
+};
 </script>
 
 <template>
@@ -23,39 +37,37 @@ import { copy } from 'v-copy'
   <div class="right">
     <div class="right-body">
         <div class="avatar">
-          <img src="@/assets/img/fb.png" alt="">
+          <img src="@/assets/img/qrthanhtoan.png" alt="">
         </div>
         <p>Chủ tài khoản</p>
-        <p>Ngân hàng</p>
+        <p>Ngân hàng Vietcombank</p>
         <div class="p_copy">
-            <p class="stk_copy">STK: 000000000
+            <p class="stk_copy">STK: 1025090176
                 <span>
                     <n-button
                         strong
                         secondary
                         circle
                         type="primary"
-                        v-copy="11111111"
-                        @click="message.success('Sao chép vào bộ nhớ tạm thành công')"
+                        @click="copyAndNotify(1025090176)"
                     ></n-button>
-                    <i class="fa-regular fa-clipboard" v-copy="1111111111" @click="message.success('Sao chép vào bộ nhớ tạm thành công')"></i>
+                    <i class="fa-regular fa-clipboard" v-copy="1025090176" @click="message.success('Sao chép vào bộ nhớ tạm thành công')"></i>
                 </span>
             </p>
         </div>
-        <p style="width: 70%;">Với kinh phí đóng về CLB là 300.000đ mỗi người hãy quét mã QR sau với nội dung nội dung:</p>
+        <p style="width: 70%;">Với kinh phí đóng về CLB là 290.000đ mỗi người hãy quét mã QR sau với nội dung nội dung:</p>
         <div class="p_copy">
             <p> - {{ userData.fullName || 'Ho va ten' }} - Dong tien sinh nhat</p>
-            <span>
+            <!-- <span>
                     <n-button
                         strong
                         secondary
                         circle
                         type="primary"
-                        v-copy="1111111111"
-                        @click="message.success('Sao chép vào bộ nhớ tạm thành công')"
+                        @click="copyAndNotify(102509017)"
                     ></n-button>
-                    <i class="fa-regular fa-clipboard" v-copy="1111111111" @click="message.success('Sao chép vào bộ nhớ tạm thành công')"></i>
-                </span>
+                    <i class="fa-regular fa-clipboard" @click="copyAndNotify(1025090176)"></i>
+                </span> -->
         </div>
     </div>
     <div class="button">

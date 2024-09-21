@@ -1,13 +1,19 @@
 <script setup lang="ts">
 import type { UploadFileInfo } from 'naive-ui';
-import type { FormInst, FormItemRule, SelectOption } from 'naive-ui';
+import type { FormInst, FormItemRule, SelectOption, NotificationType } from 'naive-ui';
 import { required } from '@vuelidate/validators';
 import { api } from '@/api/axios';
-import { useMessage } from 'naive-ui';
+import { useMessage, useNotification } from 'naive-ui';
 import { useRouter } from 'vue-router';
 import { ref, reactive } from 'vue';
 import { useUserStore } from '@/stores/user';
 import QRCodeVue3  from 'qrcode-vue3';
+
+//noti here
+
+
+
+
 const userStore = useUserStore();
 
 const useStore = useUserStore();
@@ -17,7 +23,7 @@ const userId = ref<string | undefined>('');
 
 const { push } = useRouter();
 
-const options: SelectOption[] = Array.from(Array(13).keys()).reduce(
+const options: SelectOption[] = Array.from(Array(19).keys()).reduce(
   (a, b) => {
     if (b != 0) {
       a.push({
@@ -76,13 +82,11 @@ const signup = async (user: IUserSignup) => {
   formData.append('facebook', user.facebook);
   formData.append('email', user.email);
   formData.append('phoneNumber', user.phoneNumber);
-  const uploadedFile = user.fileList[0]; // Lấy file đầu tiên trong danh sách
+  const uploadedFile = user.fileList[0]; 
   if (uploadedFile) {
     formData.append('image', user.fileList[0]!.file as File);
     console.log('Uploaded file:', uploadedFile);
-    // Bạn có thể truy cập các thuộc tính của file, ví dụ:
     console.log('File name:', uploadedFile.name);
-    //console.log('File URL:', uploadedFile.url);
   }
   console.log("file image", formData.get('image'));
   console.log(formData.get('email'));
@@ -189,6 +193,9 @@ const handleSignup = async () => {
       image: userSignupRes.image,
     }
     )
+    // noti 
+    message.success('Bạn đã đăng ký thành công!')
+    console.log('dk thành công')
     push('/signup/confirm');
   } catch (err: any) {
     const messageError = err?.response?.data?.message || err.message;
@@ -239,7 +246,7 @@ onMounted(() => {
           />
         </n-form-item>
 
-        <n-form-item label="Khóa" path="generation" class="form-element">
+        <n-form-item label="Khóa (khóa học tại trường)" path="generation" class="form-element">
             <n-select
               size="large"
               :options="options"

@@ -76,7 +76,7 @@
       // Tạo link download
       const link = document.createElement('a');
       link.href = canvas.toDataURL();
-      link.download = 'cropped-image-with-frame.png';
+      link.download = 'frame-13th-birthday-vip.png';
       link.click();
     });
   }

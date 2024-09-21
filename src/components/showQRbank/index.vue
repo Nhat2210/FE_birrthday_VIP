@@ -1,3 +1,6 @@
+<script setup lang="ts">
+
+</script>
 <template>
   <div class="wrapper">
     
@@ -24,13 +27,13 @@
       >
       <div class="content">
         <div class="image">
-          <img src="@/assets/img/fb.png" alt="ảnh qr ở đây">
+          <img src="@/assets/img/vietqr.png" alt="ảnh qr ở đây">
         </div>
         <p>Chủ tài khoản: Nguyễn Thị Hường</p>
         <p>Ngân hàng: VietcomBank</p>
-        <p>Số tài khoản: 0999999999</p>
-        <p>Với kinh phí đóng về CLB là 300.000đ mỗi người, hãy quét mã QR sau với nội dung:</p>
-        <p>Họ tên + Khóa + "đóng tiền sinh nhật"</p>
+        <p>Số tài khoản: 1025090176</p>
+        <p>Với kinh phí đóng về CLB là 290.000đ mỗi người, hãy quét mã QR sau với nội dung:</p>
+        <p>Họ tên + Khóa + "chuyển tiền sinh nhật 2024"</p>
         <button @click="showModal=false">Đóng</button>
       </div>
       </n-card>

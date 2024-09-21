@@ -60,7 +60,7 @@ const downloadQR = async () => {
               :style="{ 'border-radius': '15px' }"
             />
           </div>
-          <div class="qr-placeholder" v-else>
+          <div class="qr-placeholder" style="width: 200px; height: 200px; display: flex; align-items: center; justify-content: center; border: 3px solid #71a0f2; border-radius: 15px;" v-else>
             <div style="border-radius: 15px;">
               <p>No QR Code</p>
             </div>
@@ -72,7 +72,7 @@ const downloadQR = async () => {
       </div>
       
       <div class="button">
-        <button class="btn-return btn" @click="push('/signup/confirm')">Quay lại</button>
+        <button class="btn-return btn" @click="push('/signup/qr')">Quay lại</button>
         <button class="btn-downloadQr btn" @click="downloadQR">Tải mã QR</button>
         <button class="btn-mainpage btn" @click="push('/')">Trang chủ</button>
       </div>

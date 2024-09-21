@@ -9,6 +9,7 @@ import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
 onMounted(() => {
+  document.documentElement.style.setProperty('--swiper-navigation-size', '20px');
   const swiper = new Swiper('.swiper', {
     pagination: {
       el: '.swiper-pagination',
@@ -189,11 +190,11 @@ onMounted(() => {
   top: 50%;
   transform: translateY(-50%);
   z-index: 10; 
-  color: #333; /* Đổi màu để dễ thấy */
-  background: #fff; /* Nền trong suốt */
-  border-radius: 50%; /* Bo tròn nút */
-  width: 50px; /* Kích thước nút */
-  height: 50px; /* Kích thước nút */
+  color: #333; 
+  background: #fff; 
+  border-radius: 50%; 
+  width: 30px; 
+  height: 30px; 
   display: flex;
   align-items: center;
   justify-content: center;
