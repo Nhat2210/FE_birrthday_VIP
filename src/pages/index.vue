@@ -58,9 +58,6 @@ const interval = setInterval(function() {
     })
   );
 }, 1000); 
-setTimeout(function() {
-  clearInterval(interval);
-}, 10000);
 
 
 

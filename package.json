@@ -22,6 +22,7 @@
     "html-to-image": "^1.11.11",
     "pinia": "^2.2.2",
     "qrcode-vue3": "^1.6.8",
+    "swiper": "^11.1.14",
     "v-copy": "^0.1.0",
     "vue": "^3.2.47",
     "vue-cropperjs": "^5.0.0",

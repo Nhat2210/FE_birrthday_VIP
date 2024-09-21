@@ -45,7 +45,7 @@
                     <div class="greeting">
                         <span class="content">
                             Quyền: Bước sang tuổi thứ 13, xin chúc cho V.I.P English Club ngày càng thành công và phát triển vững mạnh! Chúc cho tất cả thành viên của đại gia đình nhà mình luôn dồi dào sức khỏe, học tập tốt và thành công trên con đường đã chọn. Mong rằng V.I.P sẽ mãi trong tim chúng ta, sẽ luôn là một kỷ niệm tuyệt vời thời sinh viên nhé
-                            Hãy cùng đồng hành cùng V.I.P English Club
+                            Hãy cùng đồng hành cùng V.I.P English Club.
                         </span> 
                     </div>
                 </div>
@@ -60,8 +60,7 @@
                     <div class="position">Phó chủ nhiệm</div>
                     <div class="greeting">
                         <span class="content">
-                            Bước sang tuổi thứ 13, xin chúc cho V.I.P ngày càng thành công hơn nữa! Chúc cho tất cả thành viên và cựu thành viên của CLB nhiều sức khỏe, học tập thật tốt và vững bước trên con đường mình đã chọn.
-                            Hãy cùng đồng hành cùng V.I.P English Club trong những chặng đường sắp tới bạn nhé!
+                            BChúc mừng câu lạc bộ nhân dịp kỷ niệm 13 năm thành lập! Hành trình 13 năm không chỉ là con số, mà còn là bao nhiêu kỷ niệm, cố gắng và sự trưởng thành của từng thành viên. Câu lạc bộ không chỉ là nơi giao lưu mà còn là ngôi nhà thứ hai, nơi mọi người cùng nhau chia sẻ niềm đam mê, vượt qua thử thách và cùng tạo nên những thành công đáng tự hào.
                         </span>
                     </div>
                 </div>
