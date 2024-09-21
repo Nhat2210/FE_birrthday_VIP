@@ -41,7 +41,7 @@ const downloadQR = async () => {
       <h1>Mã QR Checkin</h1>
       <p>Bạn đã đăng ký thành công!</p>
       <p>Trung tâm tiệc cưới Venus, 39 Đ. Cầu Diễn, Phúc Diễn, Bắc Từ Liêm, Hà Nội</p>
-      <p>Thứ bảy ngày 10 tháng 10 năm 2024</p>
+      <p>Thứ bảy ngày 5 tháng 10 năm 2024</p>
     </div>
     
     <div class="right">
