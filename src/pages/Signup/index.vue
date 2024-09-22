@@ -10,8 +10,6 @@ import { useUserStore } from '@/stores/user';
 import QRCodeVue3  from 'qrcode-vue3';
 
 
-
-
 const userStore = useUserStore();
 
 const useStore = useUserStore();
@@ -172,42 +170,18 @@ const handleValidate = (e: MouseEvent) => {
       if (formValue.fileList.length > 0) {
         formValue.previewLink = URL.createObjectURL(formValue.fileList[0].file as File);
       }
+      handleSignup();
+    }else {
+      message.error('Vui lòng điền đầy đủ thông tin trước khi tiếp tục.');
     }
   });
 };
-// const handleSignup = async () => {
-//   loading.value = true;
-//   try {
-//     const { data } = await signup(formValue);
-    
-//     const userSignupRes = data.data
-//     useStore.setUser({
-//       id: userSignupRes.id + '',
-//       fullName: userSignupRes.fullName,
-//       email: userSignupRes.email,
-//       generation: userSignupRes.generation, 
-//       phoneNumber: userSignupRes.phoneNumber,
-//       facebook: userSignupRes.facebook,
-//       image: userSignupRes.image,
-//     }
-//     )
-//     // noti 
-//     message.success('Bạn đã đăng ký thành công!')
-//     console.log('dk thành công')
-//     push('/signup/confirm');
-//   } catch (err: any) {
-//     const messageError = err?.response?.data?.message || err.message;
-//     message.error(messageError);
-//   } finally {
-//     loading.value = false;
-//   }
-// };
 
 const handleSignup = async () => {
   loading.value = true;
   try {
     const userSignupRes = {
-      id: '123',
+      id: '',
       fullName: formValue.fullName,
       email: formValue.email,
       generation: formValue.generation,
@@ -356,7 +330,7 @@ onMounted(() => {
             </n-upload>
           </n-space>
         </n-form-item>
-        <button class="btn btn-primary"  @click="handleSignup()" :disabled="loading">
+        <button class="btn btn-primary"  @click="handleValidate" :disabled="loading">
           <n-spin v-if="loading" />  
         Đăng ký ngay</button>
       </n-form>  

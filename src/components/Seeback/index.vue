@@ -34,7 +34,7 @@
         '--n-tab-text-color-hover': '#fff',
         '--n-font-weight-strong': '600'
         }" >
-            <n-tab-pane name="oasis" tab="V.I.P 11">
+            <n-tab-pane name="oasis" tab="V.I.P Khóa 10">
                 <div class="card">
                     <div class="card_infor">
                         <div class="card_infor_title"
@@ -56,8 +56,8 @@
                         data-aos-delay="200"
                         data-aos-easing="ease-in-out"
                         data-aos-offset="100"  
-                        >10 năm một chặng đường khẳng định sức mạnh của sự đoàn kết. <br>
-                         Kề vai sát cánh vai, cùng nhau vượt qua những khó khăn, <br>
+                        >10 năm một chặng đường khẳng định sức mạnh của sự đoàn kết.
+                         Kề vai sát cánh vai, cùng nhau vượt qua những khó khăn,
                           thách thức để kiến tạo một tương lai tươi sáng!
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                     </div>
                 </div>
             </n-tab-pane>
-            <n-tab-pane name="the beatles" tab="V.I.P 12">
+            <n-tab-pane name="the beatles" tab="V.I.P Khóa 11">
                 <div class="card">
                     <div class="card_infor">
                         <div class="card_infor_title"
@@ -93,9 +93,9 @@
                         data-aos-duration="300"
                         data-aos-easing="ease-in-out"
                         data-aos-offset="100"  
-                        >12 Với ngọn lửa đam mê luôn cháy bỏng, cùng nhau viết tiếp giai điệu<br> 
-                        thanh xuân rực rỡ. Một năm với đầy ắp những kỷ niệm khó quên. <br>
-                        Những trái tim cùng chung nhịp đập, vượt qua mọi khó khăn,<br> thách thức,
+                        >12 Với ngọn lửa đam mê luôn cháy bỏng, cùng nhau viết tiếp giai điệu
+                        thanh xuân rực rỡ. Một năm với đầy ắp những kỷ niệm khó quên. 
+                        Những trái tim cùng chung nhịp đập, vượt qua mọi khó khăn, thách thức,
                         vươn xa cùng phát triển!
                         </div>
                     </div>
@@ -109,7 +109,7 @@
                     </div>
                 </div>
             </n-tab-pane>
-            <n-tab-pane name="jay chou" tab="V.I.P 13">
+            <n-tab-pane name="jay chou" tab="V.I.P Khóa 12">
                 <div class="card">
                     <div class="card_infor">
                         <div class="card_infor_title"
@@ -131,8 +131,8 @@
                         data-aos-delay="200"
                         data-aos-easing="ease-in-out"
                         data-aos-offset="100"  
-                        >Một năm của sự đổi mới và phát triển! Những bước tiến vượt bậc, <br>
-                        những thay đổi tích cực đã phần nào khẳng định được vị thế <br>
+                        >Một năm của sự đổi mới và phát triển! Những bước tiến vượt bậc, 
+                        những thay đổi tích cực đã phần nào khẳng định được vị thế 
                         và sẵn sàng chinh phục những đỉnh cao mới!
                         </div>
                     </div>
@@ -142,7 +142,7 @@
                     data-aos-easing="ease-in-out"
                     data-aos-offset="100"  
                     >
-                        <img src="@/assets/img/vip11.jpg" alt="">
+                        <img src="@/assets/img/vip12.jpg" alt="">
                     </div>
                 </div>
             </n-tab-pane>

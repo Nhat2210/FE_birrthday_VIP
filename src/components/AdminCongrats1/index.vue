@@ -129,7 +129,7 @@
             flex-direction: column;
             align-items: center;
             width: 23%;
-            height: 450px;
+            height: 550px;
             margin: 0 3rem;
             padding: 3rem;
             background-color: #fff;

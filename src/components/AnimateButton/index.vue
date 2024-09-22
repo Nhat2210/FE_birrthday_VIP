@@ -26,7 +26,6 @@ button {
   background-color: #fff;
   border: 1px solid #6ea3f1;
   border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
@@ -38,7 +37,6 @@ button {
 
 button:hover {
   background-color: #6ea3f1;
-  box-shadow: 0px 15px 20px rgba(118, 178, 225, 0.4);
   color: #fff;
   transform: translateY(-1px);
 }

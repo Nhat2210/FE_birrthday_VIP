@@ -16,7 +16,7 @@ const downloadQR = async () => {
       .then((dataUrl) => {
         const downloadLink = document.createElement('a');
         downloadLink.href = dataUrl;
-        downloadLink.download = `qr-code-${userId}.png`;
+        downloadLink.download = `qr-code-sinhnhatVIP-${userId}.png`;
         downloadLink.click();
       })
       .catch((error) => {
@@ -57,10 +57,10 @@ const downloadQR = async () => {
               :imageOptions="{ hideBackgroundDots: true, imageSize: 0.4, margin: 0 }"
               :dotsOptions="{ type: 'square', color: '#05004d' }"
               :cornersSquareOptions="{ type: 'square', color: '#0e013c' }"
-              :style="{ 'border-radius': '15px' }"
+              :style="{ 'border-radius': '15px', 'padding': '20px'}"
             />
           </div>
-          <div class="qr-placeholder" style="width: 200px; height: 200px; display: flex; align-items: center; justify-content: center; border: 3px solid #71a0f2; border-radius: 15px;" v-else>
+          <div class="qr-placeholder" style="padding: 20px;width: 200px; height: 200px; display: flex; align-items: center; justify-content: center; border: 3px solid #71a0f2; border-radius: 15px;" v-else>
             <div style="border-radius: 15px;">
               <p>No QR Code</p>
             </div>
@@ -149,6 +149,7 @@ const downloadQR = async () => {
       border: 4px solid #6ea3f1; 
       border-radius: 15px; 
       width: 200px; 
+      padding: 20px;
       height: 200px; 
       overflow: hidden; 
       margin-bottom: 20px;

@@ -9,7 +9,7 @@ const userData = useStore.$state;
 import { copy } from 'v-copy'
 const name = userData.fullName;
 const gen = userData.generation
-const linkqr = `https://api.vietqr.io/image/970436-1025090176-IJzOL5G.jpg?accountName=NGUYEN%20THI%20HUONG&addInfo=${name}%20khoa${gen}%20dong%20tien%20sinh%20nhat`
+const linkqr = `https://api.vietqr.io/image/970436-1025090176-IJzOL5G.jpg?accountName=NGUYEN%20THI%20HUONG&amount=290000&addInfo=${name}%20khoa${gen}%20chuyen%20tien%20sinh%20nhat%202024`
 
 const copyToClipboard = (value: string) => {
   const tempInput = document.createElement('input');
@@ -63,16 +63,6 @@ const copyAndNotify = (value: number) => {
         <p style="width: 70%;">Với kinh phí đóng về CLB là 290.000đ mỗi người hãy quét mã QR sau với nội dung nội dung:</p>
         <div class="p_copy">
             <p> {{ userData.fullName || 'Ho va ten' }} - Khóa {{ userData.generation || 'Khóa' }} - chuyển tiền sinh nhật 2024</p>
-            <!-- <span>
-                    <n-button
-                        strong
-                        secondary
-                        circle
-                        type="primary"
-                        @click="copyAndNotify(102509017)"
-                    ></n-button>
-                    <i class="fa-regular fa-clipboard" @click="copyAndNotify(1025090176)"></i>
-                </span> -->
         </div>
     </div>
     <div class="button">
@@ -88,6 +78,7 @@ const copyAndNotify = (value: number) => {
 @import '@styles/_mixins.scss';
 .signup {
     display: flex;
+    height: 100vh;
     box-sizing: border-box;
     position: relative;
     @include mobile{
