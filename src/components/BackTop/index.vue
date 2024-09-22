@@ -5,7 +5,6 @@
         :builtin-theme-overrides="{
         iconColor: '#333',
         iconColorHover: '#333',
-        textColorHover: '#333',
         }"
         style="z-index: 1000;"
     />

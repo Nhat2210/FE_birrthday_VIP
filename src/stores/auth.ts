@@ -1,5 +1,5 @@
 import { localStorageEnum } from '@enums/authEnum'
-import api from '@axios'
+import api from 'axios'
 
 interface IAuthState {
   acccesToken: string,

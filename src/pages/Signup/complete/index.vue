@@ -6,11 +6,12 @@ const useStore = useUserStore();
 const userId = useStore.id;
 const { push } = useRouter();
 const message = useMessage();
-const qrCodeRef = ref(null); 
 import { toPng } from 'html-to-image';
 
+
+const qrCodeRef = ref<HTMLElement | null>(null); 
 const downloadQR = async () => {
-  const qrElement = qrCodeRef.value?.$el;
+  const qrElement = qrCodeRef.value;
   if (qrElement) {
     toPng(qrElement)
       .then((dataUrl) => {

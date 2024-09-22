@@ -2,7 +2,7 @@
 import { useRouter } from 'vue-router';
 const { push } = useRouter();
 const handleButton = () => {
-  push('/renewQR2');
+  push('/renewQR');
 }
 </script>
 <template>

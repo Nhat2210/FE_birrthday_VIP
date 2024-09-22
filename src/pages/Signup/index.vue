@@ -11,8 +11,6 @@ import QRCodeVue3  from 'qrcode-vue3';
 
 
 const userStore = useUserStore();
-
-const useStore = useUserStore();
 const message = useMessage();
 const loading = ref<boolean>(false);
 const userId = ref<string | undefined>('');
@@ -64,7 +62,7 @@ const formRef = ref<FormInst | null>(null);
 const formValue = reactive<IUserSignup>({
   fullName: '',
   email: '',
-  generation: null,
+  generation: '',
   phoneNumber: '',
   facebook: '',
   isFaceCheckin: false,
@@ -74,7 +72,7 @@ const formValue = reactive<IUserSignup>({
 const signup = async (user: IUserSignup) => {
   const formData = new FormData();
   formData.append('fullName', user.fullName);
-  formData.append('generation', user.generation || '');
+  formData.append('generation', String(user.generation) || '');
   formData.append('facebook', user.facebook);
   formData.append('email', user.email);
   formData.append('phoneNumber', user.phoneNumber);
@@ -165,7 +163,7 @@ const rules = {
 
 const handleValidate = (e: MouseEvent) => {
   e.preventDefault();
-  formRef.value?.validate((errors) => {
+  formRef.value?.validate((errors:any) => {
     if (!errors) {
       if (formValue.fileList.length > 0) {
         formValue.previewLink = URL.createObjectURL(formValue.fileList[0].file as File);
@@ -177,6 +175,19 @@ const handleValidate = (e: MouseEvent) => {
   });
 };
 
+function handleImageUpload(event: Event) {
+  const file = (event.target as HTMLInputElement).files?.[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const imageUrl = e.target?.result as string;
+      userStore.setImage(imageUrl); 
+    };
+    reader.readAsDataURL(file);
+  }
+}
+
+
 const handleSignup = async () => {
   loading.value = true;
   try {
@@ -187,10 +198,9 @@ const handleSignup = async () => {
       generation: formValue.generation,
       phoneNumber: formValue.phoneNumber,
       facebook: formValue.facebook,
-      image: formValue.image || 'default-image-url',
+      image: formValue.fileList.length > 0 ? formValue.previewLink : '',
     };
-
-    useStore.setUser({
+    userStore.setUser({
       id: userSignupRes.id,
       fullName: userSignupRes.fullName,
       email: userSignupRes.email,
@@ -200,9 +210,7 @@ const handleSignup = async () => {
       image: userSignupRes.image,
     });
 
-    message.success('Bạn đã đăng ký thành công!');
     console.log('Đăng ký thành công');
-
     push('/signup/confirm');
   } catch (err: any) {
     const messageError = err?.response?.data?.message || err.message;
@@ -266,7 +274,7 @@ onMounted(() => {
 
         <n-form-item label="Email" path="email" class="form-element">
           <n-input
-            type="email"
+            :input-props="{ type: 'email' }"
             autocomplete="email"
             size="large"
             placeholder="nhatbeo2003@gmail.com"
@@ -276,7 +284,7 @@ onMounted(() => {
 
         <n-form-item label="Số điện thoại" path="phoneNumber" class="form-element">
           <n-input
-            type="tel"
+            :input-props="{ type: 'tel' }"
             autocomplete="tel"
             size="large"
             placeholder="0999999999"
@@ -286,7 +294,7 @@ onMounted(() => {
 
         <n-form-item label="Link facebook" path="facebook" class="form-element">
           <n-input
-            type="url"
+            :input-props="{ type: 'url' }"
             size="large"
             placeholder="https://www.facebook.com/Nhatinsane"
             v-model:value="formValue.facebook"
@@ -305,7 +313,7 @@ onMounted(() => {
                 <n-checkbox
                   size="large"
                   label="Checkin bằng khuôn mặt"
-                  v-model:checked="formValue.isFaceCheckin"
+                  v-model:checked=  "formValue.isFaceCheckin"
                 />
               </template>
               Hãy chọn bức ảnh sắc nét nhất trong máy bạn để check in nhé!!!!
@@ -332,7 +340,7 @@ onMounted(() => {
         </n-form-item>
         <button class="btn btn-primary"  @click="handleValidate" :disabled="loading">
           <n-spin v-if="loading" />  
-        Đăng ký ngay</button>
+        Xác nhận đăng ký</button>
       </n-form>  
     </div>
   </div>
@@ -346,7 +354,7 @@ onMounted(() => {
     display: flex;   
     box-sizing: border-box; 
     position: relative;
-    // height: 100vh;
+    height: 100vh;
     @include mobile{
         display: flex;
         flex-direction: column;

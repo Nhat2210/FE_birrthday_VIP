@@ -5,6 +5,7 @@ const handleRouter = () => {
   push('/signup')
 }
 import { onMounted } from 'vue';
+// @ts-ignore
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 

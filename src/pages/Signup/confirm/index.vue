@@ -9,8 +9,9 @@ import { api } from '@/api/axios';
 const message = useMessage();
 const defaultAvatar = '@/assets/img/cat.png';
 const { push } = useRouter();
-const useStore = useUserStore();
-const userData = useStore.$state;
+const userStore = useUserStore();
+const userData = userStore.$state;
+const defaultImage:string = "@/assets/img/cat.png"; 
 
 interface UserResponse {
   fullName: string;
@@ -43,7 +44,7 @@ interface IUserSignup {
 const signup = async (user: IUserSignup) => {
   const formData = new FormData();
   formData.append('fullName', user.fullName);
-  formData.append('generation', user.generation || '');
+  formData.append('generation', String(user.generation) || '');
   formData.append('facebook', user.facebook);
   formData.append('email', user.email);
   formData.append('phoneNumber', user.phoneNumber);
@@ -60,9 +61,8 @@ const signup = async (user: IUserSignup) => {
   });
 };
 
-const picture = computed(() => {
-  return userData.image ? `https://api.viphaui.com/${userData.image}` : defaultAvatar;
-});
+
+const picture:string = "${userData.image}";
 
 const handleContinue = async () => {
   try {
@@ -78,7 +78,7 @@ const handleContinue = async () => {
 
     const { data } = await signup(userSignupData);
 
-    useStore.setUser({
+    userStore.setUser({
       fullName: data.data.fullName,
       email: data.data.email,
       generation: data.data.generation as string,
@@ -87,7 +87,8 @@ const handleContinue = async () => {
       image: data.data.image,
       id: data.data.id, 
     });
-
+    
+    message.success('Bạn đã đăng ký thành công!');
     console.log('Đăng ký thành công:', data.data);
     push('/signup/qr');
   } catch (err: any) {
@@ -113,8 +114,8 @@ const handleContinue = async () => {
     <div class="right">
       <div class="right-body">
           <div class="avatar">
-            <img src="@/assets/img/cat.png" alt="" v-if="userData.image='null'">
-            <img :src="picture" alt="" v-else>
+            <img v-if="!userStore.image" src="@/assets/img/cat.png" alt="Default Avatar" />
+            <img v-else :src="userStore.image" style="border-radius: 10px;" alt="Uploaded Image" />
           </div>
           <div class="infor">
             <div class="fullName tt">

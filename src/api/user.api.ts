@@ -5,34 +5,14 @@ import type {
   APIUserResponse,
   UserLoginResponse,
 } from '@/types/user.types';
-import type { RequestParams } from '@/types/params.type.ts';
+// import type { RequestParams } from '@/types/params.type.ts';
 // import { PAGE_SIZE_DEFAULT } from '@/enums';
 
 export const login = (userLogin: UserLogin) => {
   return api.post<UserLoginResponse>(`/v1/auth/login`, userLogin);
 };
 
-export const signup = (user: IUserSignup) => {
-  const config = {
-    headers: {
-      recaptcha: user.recaptcha,
-      'Content-Type': 'multipart/form-data'
-    }
-  };
 
-  const formData = new FormData();
-  formData.append('fullName', user.fullName);
-  formData.append('course', user.course!);
-  formData.append('facebook', user.facebook);
-  formData.append('email', user.email);
-  formData.append('phone', user.phone);
-
-  if (user.fileList.length > 0) {
-    formData.append('image', user.fileList[0]!.file as File);
-  }
-
-  return api.post<APIUserResponse>('/v1/users/signup', formData, config);
-};
 
 export const checkInFromQrCode = (qrCodeResult: string) => {
   return api.post<APIUserResponse>(`/admin/v1/users/checkin-qr/${qrCodeResult}`);

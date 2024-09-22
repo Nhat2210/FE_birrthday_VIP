@@ -1,12 +1,16 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.web.json",
   "include": ["*.d.ts", "src/**/*", "src/**/*.vue"],
   "compilerOptions": {
-    "moduleResolution": "node16",
-    "target": "ES2018",
-    "lib": ["es2018", "dom"], 
+    "types": ["vite/client", "naive-ui"],    
+    "module": "ESNext",
+    "target": "ESNext",
+    "strict": true, 
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "Node",
+    
+    "lib": ["es2018", "ESNext", "dom", "ES2016", "DOM", "DOM.Iterable"], 
     "baseUrl": ".",
-    "types": ["vite-plugin-vue-layouts/client"],
     "paths": {
       "@/*": ["./src/*"],
       "@styles/*": ["./src/styles/*"],
@@ -16,6 +20,8 @@
       "@enums/*": ["./src/enums/*"],
       "@plugins": ["./src/plugins"],
       "@directives/*": ["./src/directives/*"],
+      "naive-ui": ["node_modules/naive-ui"],
+      "vue": ["node_modules/vue/dist/vue.d.ts"]
     },
     "ignoreDeprecations": "5.0",
   },

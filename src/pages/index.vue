@@ -57,7 +57,7 @@ const interval = setInterval(function() {
       origin: { x: randomInRange(0.1, 0.9), y: randomInRange(0.1, 0.9) }, 
     })
   );
-}, 1000); 
+}, 2000); 
 
 
 

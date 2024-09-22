@@ -22,13 +22,13 @@ axiosIns.interceptors.request.use(function (config: InternalAxiosRequestConfig) 
   const token = `Bearer ${localStorage.getItem("accessToken")}`
   config.headers.Authorization = token;
   return config;
-}, function (error) {
+}, function (error:any) {
   return Promise.reject(error);
 });
 
 axiosIns.interceptors.response.use(function (response: AxiosResponse<any>) {
   return response;
-}, function (error) {
+}, function (error: any) {
   if(error.response.status == 401){
     localStorage.removeItem('accessToken');
     router.push('/login');

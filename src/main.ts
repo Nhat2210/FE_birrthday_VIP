@@ -26,12 +26,6 @@ AOS.init({
 });
 
 // su dung capcha
-import { VueRecaptchaPlugin } from 'vue-recaptcha'
-
-app.use(VueRecaptchaPlugin, {
-  v2SiteKey: 'YOUR_V2_SITEKEY_HERE',
-  v3SiteKey: 'YOUR_V3_SITEKEY_HERE',
-})
 
 app.mount('#app')
 

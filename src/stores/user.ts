@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-
+import type { UploadFileInfo } from 'naive-ui'; 
 interface UserState {
   fullName: string;
   email: string;
@@ -8,6 +8,8 @@ interface UserState {
   facebook: string;
   image: string;
   id: string; 
+  fileList: UploadFileInfo[];
+  
 }
 
 export const useUserStore = defineStore('userStore', {
@@ -18,14 +20,24 @@ export const useUserStore = defineStore('userStore', {
     phoneNumber: '',
     facebook: '',
     image: '',
-    id: ''
+    id: '',
+    fileList: []
   }),
   actions: {
-    setUser(user: UserState) {
-      Object.assign(this, user);  
+    setUser(user: any) {
+      this.fullName = user.fullName;
+      this.email = user.email;
+      this.generation = user.generation;
+      this.phoneNumber = user.phoneNumber;
+      this.facebook = user.facebook;
+      this.image = user.image;
+      this.fileList = user.fileList || this.fileList; 
     },
-    clearUser() {
-      this.$reset();
+    setImage(imageUrl: string) {
+      this.image = imageUrl;
+    },
+    setFileList(fileList: UploadFileInfo[]) {
+      this.fileList = fileList;  
     }
   }
 });

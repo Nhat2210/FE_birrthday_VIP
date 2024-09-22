@@ -1,6 +1,3 @@
-<script setup lang="ts">
-
-</script>
 <template>
   <div class="wrapper">
     
@@ -43,13 +40,13 @@
   <script lang="ts">
   import { defineComponent, ref } from 'vue'
   
+
   export default defineComponent({
     setup() {
-      return {
-        showModal: ref(false)
-      }
-    }
-  })
+      const showModal = ref(false);
+      return { showModal };
+    },
+  });
   </script>
 <style scoped lang="scss">
 @import '@styles/_mixins.scss';
