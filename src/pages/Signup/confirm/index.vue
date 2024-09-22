@@ -1,91 +1,3 @@
-<!-- <script setup lang="ts">
-import { ref, computed } from 'vue';
-import { useRouter } from 'vue-router';
-import { useUserStore } from '@/stores/user';
-import type { UploadFileInfo } from 'naive-ui';
-import { api } from '@/api/axios';
-
-const message = useMessage();
-const defaultAvatar = '@/assets/img/cat.png';
-const { push } = useRouter();
-const useStore = useUserStore();
-const userData = useStore.$state;
-
-interface UserResponse {
-  fullName: string;
-  generation: string | number | null;
-  phoneNumber: string;
-  facebook: string;
-  email: string;
-  id: string;
-  image: string;
-}
-
-interface APIUserResponse {
-  code: number;
-  message: string;
-  error: string;
-  data: UserResponse;
-}
-
-interface IUserSignup {
-  fullName: string;
-  email: string;
-  generation: string | number | null;
-  phoneNumber: string;
-  facebook: string;
-  isFaceCheckin: boolean;
-  fileList: UploadFileInfo[];
-  previewLink?: string;
-}
-
-const signup = async (user: IUserSignup) => {
-  const formData = new FormData();
-  formData.append('fullName', user.fullName);
-  formData.append('generation', user.generation || '');
-  formData.append('facebook', user.facebook);
-  formData.append('email', user.email);
-  formData.append('phoneNumber', user.phoneNumber);
-  
-  const uploadedFile = user.fileList[0]; 
-  if (uploadedFile) {
-    formData.append('image', uploadedFile.file as File);
-  }
-  
-  return api.post<APIUserResponse>('https://api.viphaui.com/api/v1/users/signup', formData, {
-    headers: {
-      'Content-Type': 'multipart/form-data',
-    },
-  });
-};
-
-const picture = computed(() => {
-  return userData.image ? `https://api.viphaui.com/${userData.image}` : defaultAvatar;
-});
-
-const handleContinue = async () => {
-  try {
-    const userSignupData: IUserSignup = {
-      fullName: userData.fullName,
-      email: userData.email,
-      generation: userData.generation,
-      phoneNumber: userData.phoneNumber,
-      facebook: userData.facebook,
-      isFaceCheckin: false, 
-      fileList: userData.fileList || [], 
-    };
-
-    const { data } = await signup(userSignupData);
-
-      console.log('Đăng ký thành công:', data.data);
-      console.log('Đăng ký thành công:', data.data.id);
-    push('/signup/qr');
-  } catch (err: any) {
-    const messageError = err?.response?.data?.message || err.message;
-    message.error(messageError);
-  }
-};
-</script> -->
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
@@ -166,7 +78,6 @@ const handleContinue = async () => {
 
     const { data } = await signup(userSignupData);
 
-    // Lưu thông tin người dùng và ID vào Pinia store
     useStore.setUser({
       fullName: data.data.fullName,
       email: data.data.email,
@@ -174,7 +85,7 @@ const handleContinue = async () => {
       phoneNumber: data.data.phoneNumber,
       facebook: data.data.facebook,
       image: data.data.image,
-      id: data.data.id, // Lưu ID mới từ API
+      id: data.data.id, 
     });
 
     console.log('Đăng ký thành công:', data.data);

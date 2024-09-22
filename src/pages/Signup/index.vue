@@ -64,7 +64,7 @@ const formRef = ref<FormInst | null>(null);
 const formValue = reactive<IUserSignup>({
   fullName: '',
   email: '',
-  generation: '',
+  generation: null,
   phoneNumber: '',
   facebook: '',
   isFaceCheckin: false,
@@ -308,7 +308,7 @@ onMounted(() => {
                   v-model:checked="formValue.isFaceCheckin"
                 />
               </template>
-              Hãy chọn bức ảnh sắc nét nhất trong máy bạn để check in nhé 3
+              Hãy chọn bức ảnh sắc nét nhất trong máy bạn để check in nhé!!!!
             </n-tooltip>
             <n-upload
               v-if="formValue.isFaceCheckin"
