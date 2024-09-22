@@ -27,7 +27,7 @@
       >
       <div class="content">
         <div class="image">
-          <img src="https://api.vietqr.io/image/970436-1025090176-IJzOL5G.jpg?accountName=NGUYEN%20THI%20HUONG&amount=290000" alt="ảnh qr ở đây">
+          <img src="@/assets/img/qrbank.png" alt="ảnh qr ở đây">
         </div>
         <p>Chủ tài khoản: Nguyễn Thị Hường</p>
         <p>Ngân hàng: VietcomBank</p>

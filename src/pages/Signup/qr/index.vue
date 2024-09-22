@@ -9,7 +9,7 @@ const userData = useStore.$state;
 import { copy } from 'v-copy'
 const name = userData.fullName;
 const gen = userData.generation
-const linkqr = `https://api.vietqr.io/image/970436-1025090176-IJzOL5G.jpg?accountName=NGUYEN%20THI%20HUONG&amount=290000&addInfo=${name}%20khoa${gen}%20chuyen%20tien%20sinh%20nhat%202024`
+const linkqr = `https://api.vietqr.io/image/970436-1025090176-IJzOL5G.jpg?accountName=NGUYEN%20THI%20HUONG&addInfo=${name}%20khoa${gen}%20chuyen%20tien%20sinh%20nhat%202024`
 
 const copyToClipboard = (value: string) => {
   const tempInput = document.createElement('input');
