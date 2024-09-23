@@ -2,7 +2,7 @@
 import { useRouter } from 'vue-router';
 const { push } = useRouter();
 const handleClick = () =>{
-    push('/')
+    push('/signup')
 }
 </script>
 <template>

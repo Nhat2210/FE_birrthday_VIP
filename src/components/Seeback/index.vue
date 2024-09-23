@@ -34,7 +34,7 @@
         '--n-tab-text-color-hover': '#fff',
         '--n-font-weight-strong': '600'
         }" >
-            <n-tab-pane name="oasis" tab="V.I.P Khóa 10">
+            <n-tab-pane name="oasis" tab="V.I.P K10">
                 <div class="card">
                     <div class="card_infor">
                         <div class="card_infor_title"
@@ -67,11 +67,11 @@
                     data-aos-easing="ease-in-out"
                     data-aos-offset="100"  
                     >
-                        <img src="@/assets/img/vip11.jpg" alt="">
+                        <img src="@/assets/img/vip10.png" alt="">
                     </div>
                 </div>
             </n-tab-pane>
-            <n-tab-pane name="the beatles" tab="V.I.P Khóa 11">
+            <n-tab-pane name="the beatles" tab="V.I.P K11">
                 <div class="card">
                     <div class="card_infor">
                         <div class="card_infor_title"
@@ -109,7 +109,7 @@
                     </div>
                 </div>
             </n-tab-pane>
-            <n-tab-pane name="jay chou" tab="V.I.P Khóa 12">
+            <n-tab-pane name="jay chou" tab="V.I.P K12">
                 <div class="card">
                     <div class="card_infor">
                         <div class="card_infor_title"
@@ -199,7 +199,7 @@
     justify-content: space-around;
     
     @include mobile {
-        flex-direction: column; // Layout dọc cho mobile
+        flex-direction: column; 
         align-items: center;
     }
     
@@ -241,6 +241,7 @@
         &_content {
             font-size: 16px;
             line-height: 1.2;
+            text-align: justify;
         }
     }
     
@@ -254,7 +255,7 @@
         
         @include mobile {
             width: 90%;
-            height: auto; // Để ảnh tự động điều chỉnh kích thước cho mobile
+            height: auto;
         }
         
         img {

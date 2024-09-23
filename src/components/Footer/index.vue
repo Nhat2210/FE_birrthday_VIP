@@ -54,6 +54,13 @@
         }
 
         .link {
+            .right{
+                @include mobile{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
             .infor {
                 font-weight: 500;
                 text-align: end;

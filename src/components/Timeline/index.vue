@@ -18,8 +18,8 @@ const handleRouter = () => {
             <n-timeline size="large">
                 <n-timeline-item
                 data-aos="fade-right"
-                data-aos-duration="300"
-                data-aos-delay="300"
+                data-aos-duration="200"
+                data-aos-delay="200"
                 data-aos-easing="ease-in-out"
 
 
@@ -30,8 +30,8 @@ const handleRouter = () => {
                 />
                 <n-timeline-item
                 data-aos="fade-left"
-                data-aos-duration="300"
-                data-aos-delay="600"
+                data-aos-duration="200"
+                data-aos-delay="400"
                 data-aos-easing="ease-in-out"
 
                 type="info"
@@ -40,8 +40,8 @@ const handleRouter = () => {
                 />
                 <n-timeline-item
                 data-aos="fade-right"
-                data-aos-duration="300"
-                data-aos-delay="900"
+                data-aos-duration="200"
+                data-aos-delay="600"
                 data-aos-easing="ease-in-out"
 
                 type="info"
@@ -51,8 +51,8 @@ const handleRouter = () => {
                 />
                 <n-timeline-item
                 data-aos="fade-left"
-                data-aos-duration="300"
-                data-aos-delay="1200"
+                data-aos-duration="200"
+                data-aos-delay="800"
                 data-aos-easing="ease-in-out"
 
                 type="info"
@@ -61,8 +61,8 @@ const handleRouter = () => {
                 />
                 <n-timeline-item
                 data-aos="fade-right"
-                data-aos-duration="300"
-                data-aos-delay="1500"
+                data-aos-duration="200"
+                data-aos-delay="1000"
                 data-aos-easing="ease-in-out"
 
                 type="info"
@@ -71,8 +71,8 @@ const handleRouter = () => {
                 />
                 <n-timeline-item
                 data-aos="fade-left"
-                data-aos-duration="300"
-                data-aos-delay="1800"
+                data-aos-duration="200"
+                data-aos-delay="1200"
                 data-aos-easing="ease-in-out"
 
                 type="info"
@@ -125,8 +125,9 @@ const handleRouter = () => {
             align-items: center;
             padding: 15px 35px;
             @include mobile{
-                padding: 1em 1.2em;
-                font-size: 8px;
+                padding: 1em 2em;
+                font-size: 12px;
+                margin: 0 auto;
             }
         }
     }

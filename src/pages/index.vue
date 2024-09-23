@@ -49,7 +49,7 @@ function randomInRange(min: number, max: number) {
 
 
 const interval = setInterval(function() {
-  const particleCount = 75; 
+  const particleCount = 55; 
   
   confetti(
     Object.assign({}, defaults, {
@@ -57,7 +57,7 @@ const interval = setInterval(function() {
       origin: { x: randomInRange(0.1, 0.9), y: randomInRange(0.1, 0.9) }, 
     })
   );
-}, 2000); 
+}, 2500); 
 
 
 

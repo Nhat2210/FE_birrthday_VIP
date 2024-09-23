@@ -87,7 +87,7 @@ const handleRouter = () => {
         }
         &_content{
             font-size: 18px;
-            max-width: 750px;
+            width: 60%;
             text-align: center;
             display: block;
             margin: 0 auto;

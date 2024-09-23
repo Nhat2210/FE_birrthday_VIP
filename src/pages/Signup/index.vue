@@ -17,7 +17,7 @@ const userId = ref<string | undefined>('');
 
 const { push } = useRouter();
 
-const options: SelectOption[] = Array.from(Array(19).keys()).reduce(
+const options: SelectOption[] = Array.from(Array(20).keys()).reduce(
   (a, b) => {
     if (b != 0) {
       a.push({
@@ -142,7 +142,7 @@ const rules = {
     validator(rule: FormItemRule, value: string) {
       if (!value) {
         return new Error('Vui lòng nhập link tài khoản facebook');
-      } else if (!/^(?:https?:\/\/)?(?:www\.|m\.)?facebook\.com\/.*$/.test(value)) {
+      } else if (!/^(?:https?:\/\/)?(?:www\.|web\.)?facebook\.com\/.*$/.test(value)) {
         return new Error('Định dạng không hợp lệ');
       }
       return true;
@@ -425,9 +425,16 @@ onMounted(() => {
     padding: 15px 20px;
     border-radius: 999px;
     border: none;
-    background: #398ae7;
+    background: #81b7f4;
     color: #fff;
     font-size: 18px;
+    cursor: pointer;
+}
+.btn:hover{
+    background: #549ff4;
+}
+.btn:active{
+  background: #4b99f3;
 }
 .cloud{
     width: 10%;

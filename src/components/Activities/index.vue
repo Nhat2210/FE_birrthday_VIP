@@ -167,16 +167,23 @@ onMounted(() => {
   object-fit: cover;
   height: 450px;
   @include mobile {
-    width: 100%;
-    margin: 0 auto;
+    width: 90vw; 
+    height: 250px; 
+    margin: 0 auto; 
+    object-fit: cover;
   }
 }
-
+.swiper-slide{
+  width: 100%;
+}
 .carousel-item-content {
   text-align: center;
   width: 50%;
   position: relative;
   margin: 0 auto;
+  @include mobile{
+    width: 100%;;
+  }
 }
 
 .caption {
@@ -203,14 +210,23 @@ onMounted(() => {
 
 
 .swiper-button-prev {
-  left: 26%; 
+  left: 25%;
+  @include mobile{
+    left: 10%;
+  } 
 }
 
 .swiper-button-next {
-  right: 26%; 
+  right: 25%;
+  @include mobile{
+    right: 10%; 
+  }
 }
 
 .swiper-pagination {
   bottom: 20%; 
+  @include mobile{
+    display: none;
+  }
 }
 </style>

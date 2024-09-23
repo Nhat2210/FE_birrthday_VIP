@@ -140,6 +140,9 @@
                 0px 2px 6px 0px rgba(0, 0, 0, 0.04),
                 0px 4px 11px 0px rgba(0, 0, 0, 0.06);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            @include mobile{
+                height: 400px;
+            }
             &:hover {
                 opacity: 1;
                 transform: translateY(-5px); 
@@ -165,6 +168,7 @@
                 height: 12rem;
                 border-radius: 50%;
                 overflow: hidden;
+                object-fit: cover;
                 img{
                     width: 100%;
                     height: 100%;
@@ -214,7 +218,7 @@
             font-size: 16px;
             margin-top: 2rem;
             line-height: 1.4;
-            text-align: center;
+            text-align: justify;
             @include tablet{
                 font-size: 15px;
             }

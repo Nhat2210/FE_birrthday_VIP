@@ -142,7 +142,7 @@ const handleContinue = async () => {
       </div>
       <div class="button">
           <button class="btn-return" @click="push('./')">Quay lại</button>
-          <button class="btn-continue" @click="handleContinue()">Tiếp tục</button>
+          <button class="btn-continue" @click="handleContinue()">Xác nhận</button>
       </div>
     </div>
     <img src="@/assets/img/cloud.png" alt="" class="cloud">
@@ -226,7 +226,8 @@ const handleContinue = async () => {
         border: 4px solid #6ea3f1;
         margin-bottom: 20px; 
         cursor: pointer;
-        
+        object-fit: contain;
+        overflow: hidden;
         img {
             width: 100%;
             display: block;
@@ -287,7 +288,12 @@ const handleContinue = async () => {
         background: #6ea3f1;
         color: #fff;
     }
+    .btn-continue:active {
+    background-color: #4982d9;
+    cursor: pointer;
 }
+}
+
 .cloud {
     width: 10%;
     height: 100%;
